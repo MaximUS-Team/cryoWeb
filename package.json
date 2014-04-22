@@ -1,9 +1,16 @@
 {
-  "name": "application-name",
+  "name": "cryoWeb",
   "version": "0.0.1",
+  "description": "Cryogenic Testing Remote Web App.",
+  "main": "/bin/www",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gillwoman/cryoWeb.git"
   },
   "dependencies": {
     "express": "~4.0.0",
@@ -13,5 +20,6 @@
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
     "jade": "~1.3.0"
-  }
+  },
+  "author": "A Gillman"
 }
