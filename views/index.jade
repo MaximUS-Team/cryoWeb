@@ -2,4 +2,6 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  :markdown
+    Welcome to #{title} [view status](/status)
+  p Currently connected to #{connection}

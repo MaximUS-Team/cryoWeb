@@ -3,9 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', {
-  	title: 'CryoWeb',
-  	connection: 'x.x.x.x:xxxx'
+  res.render('status', {
+  	title: 'CryoWeb Current Status',
   });
 });
 

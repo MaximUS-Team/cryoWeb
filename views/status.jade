@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+  p Status Monitor
+  style.
+    text {
+      font: bold 48px monospace;
+    }
+    .chart div {
+      font: 10px sans-serif;
+      background-color: steelblue;
+      text-align: right;
+      padding: 3px;
+      margin: 1px;
+      color: black;
+    }
+    .chart rect {
+      fill: steelblue;
+    }
+    .chart text {
+      fill: black;
+      font: 10px sans-serif;
+      text-anchor: end;
+    }
+  svg(class='chart', width='420', height='120')
+  div(class='hart')
+  script(src='http://code.jquery.com/jquery-1.4.2.min.js')
+  script(src='http://d3js.org/d3.v3.min.js')
+  script(src='./javascripts/currentTempPlot.js')
