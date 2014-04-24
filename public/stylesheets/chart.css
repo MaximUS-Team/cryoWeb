@@ -2,8 +2,12 @@
 	font: 10px "Console", Arial;
 }
 
-.chart rect {
+.bar {
 	fill: steelblue;
+}
+
+.bar:hover {
+	fill: brown;
 }
 
 .chart text {
