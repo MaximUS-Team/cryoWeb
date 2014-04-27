@@ -1,6 +1,4 @@
-
-//var request = require('request');
-var data = [];// = [1,2,3];
+var data = [];
 var margin = {top: 30, right: 30, bottom: 30, left: 60},
     width = 500 - margin.left - margin.right,
     height = 200 - margin.top - margin.bottom;
@@ -18,7 +16,14 @@ var xAxis = d3.svg.axis()
     .orient("bottom");
 var xAxisG = chart.append("g")
     .attr("class","x axis")
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0," + height + ")");
+xAxisG.append("text")
+    .attr("y",20)
+    .attr("x",(width - margin.right)/2)
+    .attr("dy", ".71em")
+    .style("text-anchor", "middle")
+    .text("Time");
+// create Y axis
 var yAxis = d3.svg.axis()
     .orient("left");
 var yAxisG = chart.append("g")
@@ -33,7 +38,8 @@ yAxisG.append("text")
 
 setInterval(function() {
     $.getJSON("./data?type=status&data=T", function(res) {
-        data.push(Math.round(res.T*1000)/1000);
+        data.push({time: Date.now(), T: Math.round(
+            res.T*1000)/1000});
         while (data.length > datLength) {
             data.shift();
         }
@@ -44,7 +50,8 @@ setInterval(function() {
             .range([0, width]);
         var barWidth = width/data.length;
         var y = d3.scale.linear()
-            .domain([1.1*d3.min(data)-0.1*d3.max(data), d3.max(data)])
+            .domain([1.1*d3.min(data,getT)
+            -0.1*d3.max(data,getT), d3.max(data,getT)])
             .range([height, 0]);
         xAxisG.call(xAxis.scale(x));
         yAxisG.call(yAxis.scale(y));
@@ -55,16 +62,16 @@ setInterval(function() {
             .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
         // update data
         bar.select("rect")
-            .attr("y",function(d) { return y(d); })
-            .attr("height", function(d) { return height - y(d); })
+            .attr("y",function(d) { return y(d.T); })
+            .attr("height", function(d) { return height - y(d.T); })
             .attr("width", barWidth - 1);
         // enter data
         var barEnter = bar.enter().append("g")
             .attr("class","bar")
             .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
         barEnter.append("rect")
-            .attr("y",function(d) { return y(d); })
-            .attr("height", function(d) { return height - y(d); })
+            .attr("y",function(d) { return y(d.T); })
+            .attr("height", function(d) { return height - y(d.T); })
             .attr("width", barWidth - 1);
 
         // AXIS
@@ -73,3 +80,5 @@ setInterval(function() {
         // update
     })
 },1000);
+
+getT = function(data) { return data.T; }
