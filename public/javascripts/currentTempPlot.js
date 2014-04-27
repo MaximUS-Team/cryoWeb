@@ -14,10 +14,13 @@ var chart = d3.select(".chart")
 // create X axis
 var xAxis = d3.svg.axis()
     .orient("bottom");
-var xAxisG = chart.append("g")
+xAxis.tickFormat(function(d) { return d3.time.format("%H:%M:%S")(new Date(d)); })
+    .ticks(5); // max. no. ticks
+//xAxis.tickFormat(function(d) { return d3.time.format("%H:%M")(d); });
+chart.append("g")
     .attr("class","x axis")
-    .attr("transform", "translate(0," + height + ")");
-xAxisG.append("text")
+    .attr("transform", "translate(0," + height + ")")
+    .append("text")
     .attr("y",20)
     .attr("x",(width - margin.right)/2)
     .attr("dy", ".71em")
@@ -26,9 +29,9 @@ xAxisG.append("text")
 // create Y axis
 var yAxis = d3.svg.axis()
     .orient("left");
-var yAxisG = chart.append("g")
-    .attr("class","y axis");
-yAxisG.append("text")
+chart.append("g")
+    .attr("class","y axis")
+    .append("text")
     .attr("transform", "rotate(-90)")
     .attr("y",-60)
     .attr("x",-20)
@@ -38,7 +41,8 @@ yAxisG.append("text")
 
 setInterval(function() {
     $.getJSON("./data?type=status&data=T", function(res) {
-        data.push({time: Date.now(), T: Math.round(
+        // Update data
+        data.push({time: new Date(), T: Math.round(
             res.T*1000)/1000});
         while (data.length > datLength) {
             data.shift();
@@ -46,24 +50,26 @@ setInterval(function() {
 
         // update axes
         var x = d3.scale.linear()
-            .domain([0, data.length])
+            .domain([d3.min(data,getTime), d3.max(data,getTime)])
             .range([0, width]);
         var circleWidth = width/data.length;
         var y = d3.scale.linear()
             .domain([1.1*d3.min(data,getT)
             -0.1*d3.max(data,getT), d3.max(data,getT)])
             .range([height, 0]);
-        xAxisG.call(xAxis.scale(x));
-        yAxisG.call(yAxis.scale(y));
+        chart.selectAll(".x.axis")
+            .call(xAxis.scale(x));
+        chart.selectAll(".y.axis")
+            .call(yAxis.scale(y));
 
         // data join
         var circle = chart.selectAll("circle")
-            .data(data);
+            .data(data, data.time);
         circle.enter().append("circle")
             .attr("r",2);
         circle.exit().remove();
         circle.attr("cy",function(d) { return y(d.T); })
-            .attr("cx", function(d, i) { return i * circleWidth; })
+            .attr("cx", function(d, i) { return x(d.time) })
 
         // AXIS
         // join
@@ -73,3 +79,4 @@ setInterval(function() {
 },1000);
 
 getT = function(data) { return data.T; }
+getTime = function(data) { return data.time; }
