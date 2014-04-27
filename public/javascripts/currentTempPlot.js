@@ -48,7 +48,7 @@ setInterval(function() {
         var x = d3.scale.linear()
             .domain([0, data.length])
             .range([0, width]);
-        var barWidth = width/data.length;
+        var circleWidth = width/data.length;
         var y = d3.scale.linear()
             .domain([1.1*d3.min(data,getT)
             -0.1*d3.max(data,getT), d3.max(data,getT)])
@@ -57,22 +57,13 @@ setInterval(function() {
         yAxisG.call(yAxis.scale(y));
 
         // data join
-        var bar = chart.selectAll(".bar")
-            .data(data)
-            .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
-        // update data
-        bar.select("rect")
-            .attr("y",function(d) { return y(d.T); })
-            .attr("height", function(d) { return height - y(d.T); })
-            .attr("width", barWidth - 1);
-        // enter data
-        var barEnter = bar.enter().append("g")
-            .attr("class","bar")
-            .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
-        barEnter.append("rect")
-            .attr("y",function(d) { return y(d.T); })
-            .attr("height", function(d) { return height - y(d.T); })
-            .attr("width", barWidth - 1);
+        var circle = chart.selectAll("circle")
+            .data(data);
+        circle.enter().append("circle")
+            .attr("r",2);
+        circle.exit().remove();
+        circle.attr("cy",function(d) { return y(d.T); })
+            .attr("cx", function(d, i) { return i * circleWidth; })
 
         // AXIS
         // join
