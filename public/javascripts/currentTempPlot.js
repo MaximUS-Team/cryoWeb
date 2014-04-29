@@ -39,6 +39,10 @@ chart.append("g")
     .style("text-anchor", "end")
     .text("Temperature (K)");
 
+// create path generator
+var path = chart.append("path")
+    .attr("class","line");
+
 setInterval(function() {
     $.getJSON("./data?type=status&data=T", function(res) {
         // Update data
@@ -63,17 +67,17 @@ setInterval(function() {
             .call(yAxis.scale(y));
 
         // data join
-        var circle = chart.selectAll("circle")
-            .data(data, data.time);
-        circle.enter().append("circle")
-            .attr("r",2);
-        circle.exit().remove();
-        circle.attr("cy",function(d) { return y(d.T); })
-            .attr("cx", function(d, i) { return x(d.time) })
+        var line = d3.svg.line()
+            .x(function(d) { return x(d.time); })
+            .y(function(d) { return y(d.T); })
+            .interpolate("linear");
+        path.datum(data)
+            .attr("d", line);
+
 
         // AXIS
         // join
-        chart.selectAll(".axis")
+        chart.selectAll(".axis");
         // update
     })
 },1000);
