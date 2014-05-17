@@ -12,5 +12,11 @@ router.get('/', function(req, res) {
   	res.send(400);
   }
 });
+router.put('/', function(req, res) {
+  //res.send('coolio'); // http status
+  query = req.query;
+  console.log(query);
+  res.send(200);
+});
 
 module.exports = router;
