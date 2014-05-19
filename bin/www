@@ -3,6 +3,7 @@ var debug = require('debug')('app');
 var app = require('../app');
 
 app.set('port', process.env.PORT || 3000);
+app.set('mongouri', 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo');
 
 var server = app.listen(app.get('port'), function() {
   //debug('Express server listening on port ' + server.address().port);

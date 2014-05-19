@@ -4,6 +4,8 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var fs = require('fs');
 
 var routes = require('./routes/index');
 var testpc = require('./routes/test-pc');
@@ -47,6 +49,31 @@ if (app.get('env') === 'development') {
         });
     });
 }
+
+// Connect to mongodb
+var connect = function () {
+  var options = { server: { socketOptions: { keepAlive: 1 } } }
+  mongoose.connect(
+    'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo',
+    options);
+}
+connect()
+
+// Error handler
+mongoose.connection.on('error', function (err) {
+  console.log(err);
+})
+
+// Reconnect when closed
+mongoose.connection.on('disconnected', function () {
+  connect();
+})
+
+// Bootstrap models
+var models_path = __dirname + '/models'
+fs.readdirSync(models_path).forEach(function (file) {
+  require(models_path + '/' + file)
+})
 
 // production error handler
 // no stacktraces leaked to user

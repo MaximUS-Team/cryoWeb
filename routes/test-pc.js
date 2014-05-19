@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var _ = require('underscore');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
@@ -13,10 +15,27 @@ router.get('/', function(req, res) {
   }
 });
 router.put('/', function(req, res) {
-  //res.send('coolio'); // http status
+  var currentTempModel = mongoose.model('currentTemp');
+  console.log(currentTempModel);
   query = req.query;
   console.log(query);
-  res.send(200);
+  if (query.time && query.T) {
+    var current = new currentTempModel ({
+      time: query.time,
+      T: query.T
+    });
+    current.save(function(err) {
+      if (err) {
+        res.send(400);
+        return console.log("Error saving to DB");
+      } else {
+        res.send(200);
+        return console.log("Success");
+      }
+    });
+  } else {
+    res.send(400);
+  }
 });
 
 module.exports = router;
