@@ -16,9 +16,7 @@ router.get('/', function(req, res) {
 });
 router.put('/', function(req, res) {
   var currentTempModel = mongoose.model('currentTemp');
-  console.log(currentTempModel);
   query = req.query;
-  console.log(query);
   if (query.time && query.T) {
     var current = new currentTempModel ({
       time: query.time,
@@ -30,8 +28,18 @@ router.put('/', function(req, res) {
         return console.log("Error saving to DB");
       } else {
         res.send(200);
-        return console.log("Success");
       }
+    });
+    currentTempModel.find({}, function(err, doc) {
+      var latest = 0;
+      for (var i = doc.length - 1; i >= 0; i--) {
+        dateTime = Date.parse(doc[i].time);
+        if (dateTime > latest) {
+          latest = dateTime;
+        } else if (dateTime < latest - new Date(1000*60*10)) {
+          doc[i].remove();
+        }
+      };
     });
   } else {
     res.send(400);

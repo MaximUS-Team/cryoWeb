@@ -46,11 +46,19 @@ var path = chart.append("path")
 setInterval(function() {
     $.getJSON("./data?type=status&data=T", function(res) {
         // Update data
+        /*
         data.push({time: new Date(), T: Math.round(
             res.T*1000)/1000});
         while (data.length > datLength) {
             data.shift();
-        }
+        }*/
+        data = [];
+        res.forEach(function(element) {
+            data.push({
+                T: parseFloat(element.T),
+                time: Date.parse(element.time)
+            });
+        });
 
         // update axes
         var x = d3.scale.linear()
@@ -80,7 +88,7 @@ setInterval(function() {
         chart.selectAll(".axis");
         // update
     })
-},1000);
+},10000);
 
 getT = function(data) { return data.T; }
 getTime = function(data) { return data.time; }
