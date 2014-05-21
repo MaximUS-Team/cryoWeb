@@ -43,7 +43,9 @@ chart.append("g")
 var path = chart.append("path")
     .attr("class","line");
 
-setInterval(function() {
+getT = function(data) { return data.T; }
+getTime = function(data) { return data.time; }
+updatePlot = function() {
     $.getJSON("./data?type=status&data=T", function(res) {
         // Update data
         /*
@@ -87,8 +89,10 @@ setInterval(function() {
         // join
         chart.selectAll(".axis");
         // update
-    })
-},10000);
+    });
+}
 
-getT = function(data) { return data.T; }
-getTime = function(data) { return data.time; }
+updatePlot();
+setInterval(function() {
+    updatePlot();
+},10000);
