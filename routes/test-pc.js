@@ -4,19 +4,19 @@ var mongoose = require('mongoose');
 var _ = require('underscore');
 var historyLength = 10; // mins
 
-/* GET users listing. */
+/* GET: for debug only. */
 router.get('/', function(req, res) {
   query = req.query;
   console.log(query);
-  if (query.address || query.port) {
-  	res.send(200);
-  } else {
-  	res.send(400);
-  }
+  res.send(400);
 });
+
+/* PUT: new data for DB. */
 router.put('/', function(req, res) {
   var currentTempModel = mongoose.model('currentTemp');
   query = req.query ? req.body : req.query;
+
+  // Update DB
   if (query.time && query.T) {
     var current = new currentTempModel ({
       time: query.time,
@@ -30,9 +30,9 @@ router.put('/', function(req, res) {
         res.send(200);
       }
     });
+
+    // clear old from DB
     currentTempModel.find({}, function(err, docs) {
-      //docs.sort(function(a, b) { return Date.parse(b.time) - Date.parse(a.time); });
-      //var latest = Math.max.apply(null, Date.parse.apply(null, ))
       var latest = Date.parse(_.max(docs, function(doc) { return Date.parse(doc.time); }).time);
       var oldDocs = docs.filter(function(doc) { return Date.parse(doc.time) < latest - new Date(historyLength*60*1000); });
       for (var i = oldDocs.length - 1; i >= 0; i--) {
