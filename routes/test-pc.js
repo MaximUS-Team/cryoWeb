@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var _ = require('underscore');
+var historyLength = 10; // mins
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  //res.send('coolio'); // http status
   query = req.query;
   console.log(query);
   if (query.address || query.port) {
@@ -30,15 +30,13 @@ router.put('/', function(req, res) {
         res.send(200);
       }
     });
-    currentTempModel.find({}, function(err, doc) {
-      var latest = 0;
-      for (var i = doc.length - 1; i >= 0; i--) {
-        dateTime = Date.parse(doc[i].time);
-        if (dateTime > latest) {
-          latest = dateTime;
-        } else if (dateTime < latest - new Date(1000*60*10)) {
-          doc[i].remove();
-        }
+    currentTempModel.find({}, function(err, docs) {
+      //docs.sort(function(a, b) { return Date.parse(b.time) - Date.parse(a.time); });
+      //var latest = Math.max.apply(null, Date.parse.apply(null, ))
+      var latest = Date.parse(_.max(docs, function(doc) { return Date.parse(doc.time); }).time);
+      var oldDocs = docs.filter(function(doc) { return Date.parse(doc.time) < latest - new Date(historyLength*60*1000); });
+      for (var i = oldDocs.length - 1; i >= 0; i--) {
+        oldDocs[i].remove();
       };
     });
   } else {
