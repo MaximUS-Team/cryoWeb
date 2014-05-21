@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
 });
 router.put('/', function(req, res) {
   var currentTempModel = mongoose.model('currentTemp');
-  query = req.query;
+  query = req.query ? req.body : req.query;
   if (query.time && query.T) {
     var current = new currentTempModel ({
       time: query.time,
