@@ -61,6 +61,7 @@ updatePlot = function() {
                 time: Date.parse(element.time)
             });
         });
+        data.sort(function(a, b) { return b.time - a.time; });
 
         // update axes
         var x = d3.scale.linear()
