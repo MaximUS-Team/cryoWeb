@@ -1,7 +1,8 @@
 #23456789012345678901234567890123456789012345678901234567890123456789012
 import requests, random, time, os
 from datatools import parse_DAT_file
-url = "http://jcu-cryo.herokuapp.com/test-pc"
+#url = "http://jcu-cryo.herokuapp.com/test-pc"
+url = "http://127.0.0.1:5000/test-pc"
 P = 0.1;
 I = 0.005;
 D = 0.005;
@@ -30,10 +31,14 @@ while True:
 		(random.random() - 0.5)) # PID
 
 	# Send data
-	payload = parse_DAT_file(random.choice(dataFiles))
+	filename = random.choice(dataFiles)
+	payload = parse_DAT_file(filename)
 	payload['time'] = time.strftime('%Y/%m/%d %H:%M:%S')
 	payload['T'] = '%.3f' % T
 	r = requests.put(url, data=payload)
-	print(goal)
-	print(payload)
+	print(r)
+	print('%(time)s T:%(T)s' % {'time':payload['time'], 'T':payload['T']})
+	print('Data from %s' % filename)
+	#print(goal)
+	#print(payload)
 	time.sleep(1)
