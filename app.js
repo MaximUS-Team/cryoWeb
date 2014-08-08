@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.limit('1M'))
+
 app.use('/', routes);
 app.use('/test-pc', testpc);
 app.use('/status', status);

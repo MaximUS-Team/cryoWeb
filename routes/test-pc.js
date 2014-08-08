@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var _ = require('underscore');
 var historyLength = 10; // mins
 
-/* GET: for debug only. */
+/* GET: for debug only. *
 router.get('/', function(req, res) {
   query = req.query;
   console.log(query);
