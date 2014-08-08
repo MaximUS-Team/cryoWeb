@@ -1,6 +1,6 @@
 {
   "name": "cryoWeb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cryogenic Testing Remote Web App.",
   "main": "/bin/www",
   "private": true,
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gillwoman/cryoWeb.git"
+    "url": "https://github.com/MaximUS-Team/cryoWeb.git"
   },
   "dependencies": {
     "express": "~4.0.0",
