@@ -2,7 +2,7 @@
 import requests, json, random, time, os
 from datatools import parse_DAT_file
 #url = "http://jcu-cryo.herokuapp.com/test-pc"
-url = "http://127.0.0.1:5000/test-pc"
+url = "http://127.0.0.1:5000/upload"
 P = 0.1;
 I = 0.005;
 D = 0.005;
