@@ -19,11 +19,16 @@ sendStatus = function(dataType, res) {
 	if (typeof dataType == 'undefined') {
 		return;
 	}
-	if (dataType=="T") {
+	if (dataType == "T") {
 		var currentTempModel = mongoose.model('currentTemp');
 		currentTempModel.findOne({}, function(err, doc) {
 			res.send(doc);
 		});
+	} else if (dataType == "Snp") {
+		var currentSnpModel = mongoose.model('currentSnp');
+		currentSnpModel.find({}, function(err, docs) {
+			res.send(docs);
+		})
 	}
 }
 

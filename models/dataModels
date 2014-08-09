@@ -6,7 +6,7 @@ var currentTempSchema = Schema({
     T: String
 });
 
-var currentSnpSchema = Schema({
+var snpSchema = Schema({
     "Frequency": String,
     "S11 Re": String,
     "S11 Im": String,
@@ -19,6 +19,6 @@ var currentSnpSchema = Schema({
 });
 
 mongoose.model('currentTemp', currentTempSchema);
-mongoose.model('currentSnp', currentSnpSchema);
+mongoose.model('currentSnp', snpSchema);
 console.log('currentTemp');
 console.log('currentSnp');
