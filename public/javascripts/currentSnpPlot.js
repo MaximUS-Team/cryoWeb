@@ -1,94 +1,105 @@
 var data = [];
 var margin = {top: 30, right: 30, bottom: 30, left: 60},
-    width = 500 - margin.left - margin.right,
+    width = 200 - margin.left - margin.right,
     height = 200 - margin.top - margin.bottom;
-var datLength = 20;
 
 // initialise chart
-var chart = d3.select(".chart")
+var snpchart = d3.select(".Snpchart")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin.top +
+        ")");
 
 // create X axis
 var xAxis = d3.svg.axis()
     .orient("bottom");
-xAxis.tickFormat(function(d) { return d3.time.format("%H:%M:%S")(new Date(d)); })
-    .ticks(5); // max. no. ticks
-//xAxis.tickFormat(function(d) { return d3.time.format("%H:%M")(d); });
-chart.append("g")
-    .attr("class","x axis")
-    .attr("transform", "translate(0," + height + ")")
+snpchart.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0, " + height + ")")
     .append("text")
-    .attr("y",20)
+    .attr("y", margin.bottom)
     .attr("x",(width - margin.right)/2)
-    .attr("dy", ".71em")
+    .attr("dy", "-.5em")
     .style("text-anchor", "middle")
-    .text("Time");
+    .text("Real");
+var x = d3.scale.linear()
+    .domain([-1, 1]) // passive limits
+    .range([0, width]);
 // create Y axis
 var yAxis = d3.svg.axis()
     .orient("left");
-chart.append("g")
-    .attr("class","y axis")
+snpchart.append("g")
+    .attr("class", "y axis")
     .append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y",-60)
-    .attr("x",-20)
+    .attr("y", -60)
+    .attr("x", -20)
     .attr("dy", ".71em")
     .style("text-anchor", "end")
-    .text("Temperature (K)");
+    .text("Imaginary");
+var y = d3.scale.linear()
+    .domain([-1, 1])
+    .range([height, 0]);
 
 // create path generator
-var path = chart.append("path")
-    .attr("class","line");
+var path = snpchart.append("path")
+    .attr("class", "line");
 
 getT = function(data) { return data.T; }
 getTime = function(data) { return data.time; }
 updatePlot = function() {
-    $.getJSON("./data?type=status&data=T", function(res) {
-        // Update data
-        /*
-        data.push({time: new Date(), T: Math.round(
-            res.T*1000)/1000});
-        while (data.length > datLength) {
-            data.shift();
-        }*/
-        data = [];
+    $.getJSON("./data?type=status&data=Snp", function(res) {
+        S11 = [];
+        S12 = [];
+        S21 = [];
+        S22 = [];
+        console.log(res);
         res.forEach(function(element) {
-            data.push({
-                T: parseFloat(element.T),
-                time: Date.parse(element.time)
+            S11.push({
+                Frequency: parseFloat(element.Frequency),
+                Re: parseFloat(element["S11 Re"]),
+                Im: parseFloat(element["S11 Im"])
+            });
+            S12.push({
+                Frequency: parseFloat(element.Frequency),
+                Re: parseFloat(element["S12 Re"]),
+                Im: parseFloat(element["S12 Im"])
+            });
+            S21.push({
+                Frequency: parseFloat(element.Frequency),
+                Re: parseFloat(element["S21 Re"]),
+                Im: parseFloat(element["S21 Im"])
+            });
+            S22.push({
+                Frequency: parseFloat(element.Frequency),
+                Re: parseFloat(element["S22 Re"]),
+                Im: parseFloat(element["S22 Im"])
             });
         });
-        data.sort(function(a, b) { return b.time - a.time; });
+        S11.sort(function(a, b) { return b.Frequency - a.Frequency; });
+        S12.sort(function(a, b) { return b.Frequency - a.Frequency; });
+        S11.sort(function(a, b) { return b.Frequency - a.Frequency; });
+        S22.sort(function(a, b) { return b.Frequency - a.Frequency; });
 
-        // update axes
-        var x = d3.scale.linear()
-            .domain([d3.min(data,getTime), d3.max(data,getTime)])
-            .range([0, width]);
-        var circleWidth = width/data.length;
-        var y = d3.scale.linear()
-            .domain([1.1*d3.min(data,getT)
-            -0.1*d3.max(data,getT), d3.max(data,getT)])
-            .range([height, 0]);
-        chart.selectAll(".x.axis")
+        // update axes // can this go outside?
+        snpchart.selectAll(".x.axis")
             .call(xAxis.scale(x));
-        chart.selectAll(".y.axis")
+        snpchart.selectAll(".y.axis")
             .call(yAxis.scale(y));
 
         // data join
         var line = d3.svg.line()
-            .x(function(d) { return x(d.time); })
-            .y(function(d) { return y(d.T); })
+            .x(function(d) { return x(d.Re); })
+            .y(function(d) { return y(d.Im); })
             .interpolate("linear");
-        path.datum(data)
+        path.datum(S11)
             .attr("d", line);
 
 
         // AXIS
         // join
-        chart.selectAll(".axis");
+        snpchart.selectAll(".axis");
         // update
     });
 }

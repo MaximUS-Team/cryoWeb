@@ -72,24 +72,30 @@ router.post('/', function(req, res) {
           // if empty
           if (docs.length == 0) {
             // add new S-params
-            for (var i=0; i < query.Snp.length; i++) {
-              var SnpPoint = query.Snp[i];
-              currentSnpModel.create({
-                "Frequency": SnpPoint["Frequency"],
-                "S11 Re": SnpPoint["S11 Re"],
-                "S11 Im": SnpPoint["S11 Im"],
-                "S12 Re": SnpPoint["S12 Re"],
-                "S12 Im": SnpPoint["S12 Im"],
-                "S21 Re": SnpPoint["S21 Re"],
-                "S21 Im": SnpPoint["S21 Im"],
-                "S22 Re": SnpPoint["S22 Re"],
-                "S22 Im": SnpPoint["S22 Im"]
-              }, function(err, doc) {
-                if (err) {
-                  res.send(400);
-                  return console.log("Error saving to DB");
-                }
-              });
+            if (query.Snp) {
+              for (var i=0; i < query.Snp.length; i++) {
+                var SnpPoint = query.Snp[i];
+                currentSnpModel.create({
+                  "Frequency": SnpPoint["Frequency"],
+                  "S11 Re": SnpPoint["S11 Re"],
+                  "S11 Im": SnpPoint["S11 Im"],
+                  "S12 Re": SnpPoint["S12 Re"],
+                  "S12 Im": SnpPoint["S12 Im"],
+                  "S21 Re": SnpPoint["S21 Re"],
+                  "S21 Im": SnpPoint["S21 Im"],
+                  "S22 Re": SnpPoint["S22 Re"],
+                  "S22 Im": SnpPoint["S22 Im"]
+                }, function(err, doc) {
+                  if (err) {
+                    res.send(400);
+                    return console.log("Error saving to DB");
+                  }
+                });
+              }
+            } else {
+              console.log(
+                'for some reason query.Snp from upload is blank.')
+              console.log(query.Snp)
             }
           }
         });
