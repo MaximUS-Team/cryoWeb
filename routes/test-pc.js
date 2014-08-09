@@ -11,12 +11,10 @@ router.get('/', function(req, res) {
   res.send(400, "Sorry, you shouldn't be here!");
 });
 
-/* PUT: new data for DB. */
-router.put('/', function(req, res) {
+/* POST: new data for DB. */
+router.post('/', function(req, res) {
   // get query either as request's body or query
-  console.log('poo')
   query = req.query ? req.body : req.query;
-  console.log(query)
 
   // Update DB on temp
   if (query.time && query.T) {
@@ -30,7 +28,7 @@ router.put('/', function(req, res) {
         res.send(400);
         return console.log("Error saving to DB");
       } else {
-        res.send(200);
+        res.send(201);
       }
     });
 
@@ -58,34 +56,45 @@ router.put('/', function(req, res) {
 
     // only have one set of current S-params at a time, so first
     // delete old data.
+    /*
     currentSnpModel.find({}, function(err, docs) {
       for (doc in docs) {
         doc.remove();
       }
+    });*/
+    currentSnpModel.remove({}, function (err) {
+      if (err) {
+        res.send(400);
+        return console.log("Error removing Snp from DB");
+      } else {
+        // check how many entries left
+        currentSnpModel.find({}, function(err, docs) {
+          // if empty
+          if (docs.length == 0) {
+            // add new S-params
+            for (var i=0; i < query.Snp.length; i++) {
+              var SnpPoint = query.Snp[i];
+              currentSnpModel.create({
+                "Frequency": SnpPoint["Frequency"],
+                "S11 Re": SnpPoint["S11 Re"],
+                "S11 Im": SnpPoint["S11 Im"],
+                "S12 Re": SnpPoint["S12 Re"],
+                "S12 Im": SnpPoint["S12 Im"],
+                "S21 Re": SnpPoint["S21 Re"],
+                "S21 Im": SnpPoint["S21 Im"],
+                "S22 Re": SnpPoint["S22 Re"],
+                "S22 Im": SnpPoint["S22 Im"]
+              }, function(err, doc) {
+                if (err) {
+                  res.send(400);
+                  return console.log("Error saving to DB");
+                }
+              });
+            }
+          }
+        });
+      }
     });
-
-    // add new S-params
-    for (line in query.Snp) {
-      var current = new currentSnpModel ({
-        "Frequency": line["Frequency"],
-        "S11 Re": line["S11 Re"],
-        "S11 Im": line["S11 Im"],
-        "S12 Re": line["S12 Re"],
-        "S12 Im": line["S12 Im"],
-        "S21 Re": line["S21 Re"],
-        "S21 Im": line["S21 Im"],
-        "S22 Re": line["S22 Re"],
-        "S22 Im": line["S22 Im"]
-      });
-      current.save(function(err) {
-        if (err) {
-          res.send(400);
-          return console.log("Error saving to DB");
-        } else {
-          res.send(200);
-        }
-      });
-    }
   }
 });
 

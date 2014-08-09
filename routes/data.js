@@ -21,7 +21,7 @@ sendStatus = function(dataType, res) {
 	}
 	if (dataType=="T") {
 		var currentTempModel = mongoose.model('currentTemp');
-		currentTempModel.find({}, function(err, doc) {
+		currentTempModel.findOne({}, function(err, doc) {
 			res.send(doc);
 		});
 	}

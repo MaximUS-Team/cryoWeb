@@ -1,5 +1,5 @@
 #23456789012345678901234567890123456789012345678901234567890123456789012
-import requests, random, time, os
+import requests, json, random, time, os
 from datatools import parse_DAT_file
 #url = "http://jcu-cryo.herokuapp.com/test-pc"
 url = "http://127.0.0.1:5000/test-pc"
@@ -35,10 +35,15 @@ while True:
 	payload = parse_DAT_file(filename)
 	payload['time'] = time.strftime('%Y/%m/%d %H:%M:%S')
 	payload['T'] = '%.3f' % T
-	r = requests.put(url, data=payload)
+	headers = {'content-type': 'application/json'}
+	r = requests.post(url, data=json.dumps(payload), headers=headers)
 	print(r)
-	print('%(time)s T:%(T)s' % {'time':payload['time'], 'T':payload['T']})
+	print('bytes: %(bytes)sb, entries: %(entries)s' %
+		{'bytes': len(json.dumps(payload)),
+		'entries': len(payload['Snp'])})
+	print('%(time)s T:%(T)s' % {'time':payload['time'],
+		'T':payload['T']})
 	print('Data from %s' % filename)
 	#print(goal)
 	#print(payload)
-	time.sleep(1)
+	time.sleep(10)

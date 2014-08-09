@@ -16,8 +16,11 @@ def parse_DAT_file(filename):
 		data = {'time': time.strftime(
 			'%Y/%m/%d %H:%M:%S',date),
 			'T': tempStr, 'Snp': []}
+		a = 0
 		for line in reader:
-			data['Snp'].append(line)
+			if a==0:
+				data['Snp'].append(line)
+			a = (a + 1) % 4
 	return data
 
 if __name__ == '__main__':
