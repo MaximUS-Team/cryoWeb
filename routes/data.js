@@ -9,21 +9,23 @@ router.get('/', function(req, res) {
   if (query.type == "status") {
   	sendStatus(query.data,res);
   } else {
-  	res.send(400);
+  	res.send(400, 'No type specified. Did you mean type=status?');
   }
 });
 
-var prevTemp = 300;
-
 sendStatus = function(dataType, res) {
 	if (typeof dataType == 'undefined') {
-		return;
-	}
-	if (dataType=="T") {
+		res.send(400, 'No data specified.');
+	} else if (dataType == "T") {
 		var currentTempModel = mongoose.model('currentTemp');
-		currentTempModel.find({}, function(err, doc) {
-			res.send(doc);
+		currentTempModel.find({}, function(err, docs) {
+			res.send(docs);
 		});
+	} else if (dataType == "Snp") {
+		var currentSnpModel = mongoose.model('currentSnp');
+		currentSnpModel.find({}, function(err, docs) {
+			res.send(docs);
+		})
 	}
 }
 

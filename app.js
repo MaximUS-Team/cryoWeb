@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 
 var routes = require('./routes/index');
-var testpc = require('./routes/test-pc');
+var upload = require('./routes/upload');
 var status = require('./routes/status');
 var data = require('./routes/data');
 
@@ -19,13 +19,13 @@ app.set('view engine', 'jade');
 
 app.use(favicon());
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '500kb'}));
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/test-pc', testpc);
+app.use('/upload', upload);
 app.use('/status', status);
 app.use('/data', data);
 
