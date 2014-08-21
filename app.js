@@ -62,6 +62,7 @@ connect()
 // Error handler
 mongoose.connection.on('error', function (err) {
   console.log(err);
+  console.log("Ben");
 })
 
 // Reconnect when closed
@@ -85,5 +86,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
+console.log('ben')
+logger("benjamin")
 module.exports = app;
