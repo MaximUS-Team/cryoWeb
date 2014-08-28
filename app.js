@@ -7,18 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
 
-var loggly = require('loggly');
 
-var client = loggly.createClient({
-  //token:
-  subdomain: "https://github.com/MaximUS-Team/cryoWeb.git",
-  auth: {
-    username: "cryogen",
-    password: ""
-  },
-  tags: ['global-tag']
-
-});
 
 
 
