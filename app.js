@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
-//var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -9,12 +8,13 @@ var fs = require('fs');
 
 var winston = require('winston');
 
-//winston.log('info', 'Hello World!');
-//winston.info('Hello again distributed logs');
+//Mongo DB connection for winston logs
 
-//winston.add(winston.transports.File, {filename: 'test.log'});
-//winston.remove(winston.transports.console);
+//require('winston-mongodb').mongodb;
 
+
+
+//Initiate own version of winston logger
 var logger = new (winston.Logger)({
   transports: [
   new (winston.transports.Console)(),
@@ -27,13 +27,6 @@ logger.info('Hello again distributed logs');
 
 //logger.add(winston.transports.File);
 //logger.remove(winston.transports.Console);
-
-
-
-
-//winston.log('silly', "Ben");
-//winston.error('error', "test");
-
 
 
 var routes = require('./routes/index');
