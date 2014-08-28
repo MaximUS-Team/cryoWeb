@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
-var logger = require('morgan');
+//var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -9,15 +9,31 @@ var fs = require('fs');
 
 var winston = require('winston');
 
-winston.log('info', 'Hello World!');
-winston.info('Hello again distributed logs');
+//winston.log('info', 'Hello World!');
+//winston.info('Hello again distributed logs');
 
-winston.add(winston.transports.File, {filename: 'test.log'});
+//winston.add(winston.transports.File, {filename: 'test.log'});
 //winston.remove(winston.transports.console);
+
+var logger = new (winston.Logger)({
+  transports: [
+  new (winston.transports.Console)(),
+  new (winston.transports.File)({ filename: 'test.log'})
+  ]
+})
+
+logger.log('info', 'Hello World!!');
+logger.info('Hello again distributed logs');
+
+//logger.add(winston.transports.File);
+//logger.remove(winston.transports.Console);
+
+
 
 
 //winston.log('silly', "Ben");
 //winston.error('error', "test");
+
 
 
 var routes = require('./routes/index');
@@ -31,7 +47,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(favicon());
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json({limit: '500kb'}));
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());

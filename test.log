@@ -1,0 +1,6 @@
+{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T22:40:49.779Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T22:40:49.779Z"}
+{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T22:49:16.881Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T22:49:16.882Z"}
+{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T22:52:40.154Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T22:52:40.155Z"}
