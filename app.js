@@ -7,6 +7,21 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
 
+var loggly = require('loggly');
+
+var client = loggly.createClient({
+  //token:
+  subdomain: "https://github.com/MaximUS-Team/cryoWeb.git",
+  auth: {
+    username: "cryogen",
+    password: ""
+  },
+  tags: ['global-tag']
+
+});
+
+
+
 var routes = require('./routes/index');
 var upload = require('./routes/upload');
 var status = require('./routes/status');
@@ -62,7 +77,7 @@ connect()
 // Error handler
 mongoose.connection.on('error', function (err) {
   console.log(err);
-  console.log("Ben");
+  //console.log("Ben");
 })
 
 // Reconnect when closed
@@ -86,6 +101,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
-console.log('ben')
-logger("benjamin")
+console.log('info', 'ben')
+
+//winston.log('info', 'test 1!');
 module.exports = app;
