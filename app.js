@@ -7,7 +7,10 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
 
+var winston = require('winston');
 
+winston.log('info', 'Hello World!');
+winston.info('Hello again distributed logs');
 
 
 
