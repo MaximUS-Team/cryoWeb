@@ -12,6 +12,12 @@ var winston = require('winston');
 winston.log('info', 'Hello World!');
 winston.info('Hello again distributed logs');
 
+winston.add(winston.transports.File, {filename: 'test.log'});
+//winston.remove(winston.transports.console);
+
+
+//winston.log('silly', "Ben");
+//winston.error('error', "test");
 
 
 var routes = require('./routes/index');
