@@ -8,11 +8,11 @@ block content
       script(src='./javascripts/skipTestPoint.js')
       script(src='./javascripts/stopTest.js')
 
-      button(class='btn', style='width: 100px; height:50px; background-color:orange', onclick='pauseCurrentTest()') Pause Current Test
+      button(class='btn', id='btnPause', style='width: 100px; height:50px; background-color:orange', onclick='pauseCurrentTest()') Pause Test
 
-      button(class='btn', style='width: 100px; height:50px; background-color:yellow', onclick='skipTestPoint()') Skip Current Test Point
+      button(class='btn', id='btnSkip', style='width: 100px; height:50px; background-color:yellow', onclick='skipTestPoint()') Skip Test Point
 
-      button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='stopTest()') Stop Current Test
+      button(class='btn', id='btnStop', style='width: 100px; height:50px; background-color:red', onclick='stopTest()') Stop Test
 
   div
   svg(class='Tchart')
@@ -21,3 +21,4 @@ block content
   script(src='http://d3js.org/d3.v3.min.js')
   script(src='./javascripts/currentTempPlot.js')
   script(src='./javascripts/currentSnpPlot.js')
+  script(src='./javascripts/updateTestSettings.js')
