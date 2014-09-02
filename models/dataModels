@@ -33,6 +33,8 @@ var testSettingsSchema = Schema({
 mongoose.model('currentTemp', currentTempSchema);
 mongoose.model('currentSnp', snpSchema);
 mongoose.model('serverCommand', serverCmdSchema);
+mongoose.model('testSettings', testSettingsSchema);
 console.log('currentTemp');
 console.log('currentSnp');
 console.log('serverCommand');
+console.log('testSettings');
