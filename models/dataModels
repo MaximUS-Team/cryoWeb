@@ -19,8 +19,15 @@ var snpSchema = Schema({
 });
 
 var serverCmdSchema = Schema({
-    time: String
+    time: String,
     command: String
+});
+
+var testSettingsSchema = Schema({
+    status: String,
+    pid: String,
+    tempcontroller: String,
+    testpoints: [String]
 });
 
 mongoose.model('currentTemp', currentTempSchema);
