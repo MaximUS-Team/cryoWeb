@@ -19,18 +19,13 @@ var snpSchema = Schema({
 });
 
 var serverCmdSchema = Schema({
+    time: String
     command: String
-});
-
-var serverRspSchema = Schema({
-    response: String
 });
 
 mongoose.model('currentTemp', currentTempSchema);
 mongoose.model('currentSnp', snpSchema);
 mongoose.model('serverCommand', serverCmdSchema);
-mongoose.model('serverResponse', serverRspSchema);
 console.log('currentTemp');
 console.log('currentSnp');
 console.log('serverCommand');
-console.log('serverResponse');
