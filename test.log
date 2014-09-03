@@ -6,3 +6,11 @@
 {"level":"warning","message":"warning test","timestamp":"2014-09-03T10:32:57.233Z"}
 {"level":"eror","message":"error test","timestamp":"2014-09-03T10:32:57.233Z"}
 {"level":"critical","message":"critical test","timestamp":"2014-09-03T10:32:57.234Z"}
+{"level":"info","message":"info test. \n","timestamp":"2014-09-03T11:02:05.197Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-09-03T11:02:05.201Z"}
+{"level":"eror","message":"error test","timestamp":"2014-09-03T11:02:05.201Z"}
+{"level":"critical","message":"critical test","timestamp":"2014-09-03T11:02:05.201Z"}
+{"level":"info","message":"info test.","timestamp":"2014-09-03T23:03:53.406Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-09-03T23:03:53.410Z"}
+{"level":"eror","message":"error test","timestamp":"2014-09-03T23:03:53.410Z"}
+{"level":"critical","message":"critical test","timestamp":"2014-09-03T23:03:53.410Z"}
