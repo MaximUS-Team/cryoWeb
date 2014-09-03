@@ -10,7 +10,7 @@ var winston = require('winston');
 
 //Mongo DB connection for winston logs
 
-//require('winston-mongodb').mongodb;
+require('winston-mongodb').MongoDB;
 
 
 
