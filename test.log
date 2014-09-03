@@ -1,14 +1,8 @@
-{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T22:40:49.779Z"}
-{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T22:40:49.779Z"}
-{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T22:49:16.881Z"}
-{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T22:49:16.882Z"}
-{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T22:52:40.154Z"}
-{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T22:52:40.155Z"}
-{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T22:59:41.364Z"}
-{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T22:59:41.365Z"}
-{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T23:06:04.245Z"}
-{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T23:06:04.246Z"}
-{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T23:14:50.550Z"}
-{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T23:14:50.551Z"}
-{"level":"info","message":"Hello World!!","timestamp":"2014-08-28T23:36:08.703Z"}
-{"level":"info","message":"Hello again distributed logs","timestamp":"2014-08-28T23:36:08.705Z"}
+{"level":"info","message":"info test.","timestamp":"2014-09-03T10:31:42.732Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-09-03T10:31:42.736Z"}
+{"level":"critical","message":"critical test","timestamp":"2014-09-03T10:31:42.736Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2014-09-03T10:31:42.737Z"}
+{"level":"info","message":"info test.","timestamp":"2014-09-03T10:32:57.230Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-09-03T10:32:57.233Z"}
+{"level":"eror","message":"error test","timestamp":"2014-09-03T10:32:57.233Z"}
+{"level":"critical","message":"critical test","timestamp":"2014-09-03T10:32:57.234Z"}

@@ -11,19 +11,49 @@ var winston = require('winston');
 //Mongo DB connection for winston logs
 
 require('winston-mongodb').MongoDB;
+//winston.add(winston.transports.MongoDB, options);
 
+//define logging levels
 
+var loggingLevels = {
+  levels: {
+    info: 0,
+    warning: 1, 
+    eror: 2,
+    critical: 3
+  },
+  colors: {
+    info: 'blue',
+    warning: 'yellow',
+    eror: 'red',\\ when named error it stops the code from executing when called
+    critical: 'orange'
+  }
+
+};
+
+winston.addColors(loggingLevels.colors);
 
 //Initiate own version of winston logger
-var logger = new (winston.Logger)({
+var logger = new (winston.Logger)
+({ 
+  levels: 
+  (loggingLevels.levels),
   transports: [
   new (winston.transports.Console)(),
   new (winston.transports.File)({ filename: 'test.log'})
   ]
 })
 
-logger.log('info', 'Hello World!!');
-logger.info('Hello again distributed logs');
+
+
+logger.log('info', 'info test.');
+
+logger.log('warning', 'warning test');
+
+logger.log('eror', 'error test');
+
+logger.log('critical', 'critical test');
+
 
 //logger.add(winston.transports.File);
 //logger.remove(winston.transports.Console);
@@ -108,7 +138,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
-console.log('info', 'ben')
+
 
 //winston.log('info', 'test 1!');
 module.exports = app;
