@@ -42,7 +42,6 @@ var logger = new (winston.Logger)
   new (winston.transports.File)({ filename: 'test.log'}),
   new (winston.transports.MongoDB)(
     {dbUri: 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo'})
-    //{ db: 'jcu-cryo', level: 'info', username: 'Jcu14.207@gmail.com', password: 'Cryogenic', port: '10003', host: 'admin:Cryogenic@oceanic.mongohq.com' })
   ]
 })
 
@@ -108,7 +107,6 @@ connect()
 // Error handler
 mongoose.connection.on('error', function (err) {
   console.log(err);
-  //console.log("Ben");
 })
 
 // Reconnect when closed
@@ -132,7 +130,4 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
-
-//winston.log('info', 'test 1!');
 module.exports = app;
