@@ -41,7 +41,8 @@ var logger = new (winston.Logger)
   new (winston.transports.Console)(),
   new (winston.transports.File)({ filename: 'test.log'}),
   new (winston.transports.MongoDB)(
-    { db: 'jcu-cryo', level: 'info', username: 'Jcu14.207@gmail.com', password: 'Cryogenic', port: '10003', host: 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo' })
+    {dbUri: 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo'})
+    //{ db: 'jcu-cryo', level: 'info', username: 'Jcu14.207@gmail.com', password: 'Cryogenic', port: '10003', host: 'admin:Cryogenic@oceanic.mongohq.com' })
   ]
 })
 
