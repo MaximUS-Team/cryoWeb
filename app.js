@@ -10,7 +10,7 @@ var winston = require('winston');
 
 //Mongo DB connection for winston logs
 
-require('winston-mongodb').MongoDB;
+var MongoDB =require('winston-mongodb').MongoDB;
 
 //define logging levels
 
@@ -18,13 +18,13 @@ var loggingLevels = {
   levels: {
     info: 0,
     warning: 1, 
-    eror: 2,
+    err: 2,
     critical: 3
   },
   colors: {
     info: 'blue',
     warning: 'yellow',
-    eror: 'red',
+    err: 'red',
     critical: 'orange'
   }
 
@@ -41,7 +41,7 @@ var logger = new (winston.Logger)
   new (winston.transports.Console)(),
   new (winston.transports.File)({ filename: 'test.log'}),
   new (winston.transports.MongoDB)(
-    { db: 'db', level: 'info', username: 'Jcu14.207@gmail.com', password: 'Cryogenic' })
+    { db: 'jcu-cryo', level: 'info', username: 'Jcu14.207@gmail.com', password: 'Cryogenic', port: '10003', host: 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo' })
   ]
 })
 
