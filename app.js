@@ -1,11 +1,57 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
-var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
+
+var winston = require('winston');
+
+//Mongo DB connection for winston logs
+
+var MongoDB =require('winston-mongodb').MongoDB;
+
+//define logging levels
+
+var loggingLevels = {
+  levels: {
+    info: 0,
+    warning: 1, 
+    err: 2,
+    critical: 3
+  },
+  colors: {
+    info: 'blue',
+    warning: 'yellow',
+    err: 'red',
+    critical: 'orange'
+  }
+
+};
+
+winston.addColors(loggingLevels.colors);
+
+//Initiate own version of winston logger
+var logger = new (winston.Logger)
+({ 
+  levels: 
+  (loggingLevels.levels),
+  transports: [
+  new (winston.transports.Console)(),
+  new (winston.transports.File)({ filename: 'test.log'}),
+  new (winston.transports.MongoDB)(
+    {dbUri: 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo'})
+    //{ db: 'jcu-cryo', level: 'info', username: 'Jcu14.207@gmail.com', password: 'Cryogenic', port: '10003', host: 'admin:Cryogenic@oceanic.mongohq.com' })
+  ]
+})
+
+//Test logging Levels
+
+logger.log('info', 'info test.');
+logger.log('warning', 'warning test');
+logger.log('err', 'error test');
+logger.log('critical', 'critical test');
 
 var routes = require('./routes/index');
 var upload = require('./routes/upload');
@@ -18,7 +64,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(favicon());
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json({limit: '500kb'}));
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
@@ -62,6 +108,7 @@ connect()
 // Error handler
 mongoose.connection.on('error', function (err) {
   console.log(err);
+  //console.log("Ben");
 })
 
 // Reconnect when closed
@@ -86,4 +133,6 @@ app.use(function(err, req, res, next) {
 });
 
 
+
+//winston.log('info', 'test 1!');
 module.exports = app;
