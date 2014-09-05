@@ -16,6 +16,11 @@ router.post('/', function(req, res) {
   // get query either as request's body or query
   query = req.query ? req.body : req.query;
 
+  // ensure the query has something
+  if (!query.time && !query.T && !query.Snp && !query.serverCommand) {
+    res.send(400);
+  }
+
   if (query.time && query.T) {
     // update database with new temperature/time
     var currentTempModel = mongoose.model('currentTemp');
@@ -46,7 +51,9 @@ router.post('/', function(req, res) {
         oldDocs[i].remove();
       };
     });
-  } else if (query.Snp) {
+  }
+
+  if (query.Snp) {
     // update database with new SNP data
     (function() {
       var Snp = query.Snp
@@ -99,7 +106,9 @@ router.post('/', function(req, res) {
         }
       });
     })()
-  } else if (query.serverCommand) {
+  }
+
+  if (query.serverCommand) {
     // update database with new server command
     (function() {
       var serverCmdSchema = mongoose.model('serverCommand');
@@ -116,9 +125,7 @@ router.post('/', function(req, res) {
       });
     })();
     //console.log("Query received: " + query.serverCommand);
-    res.send(200);
-  } else {
-    res.send(400);
+    res.send(201);
   }
 });
 

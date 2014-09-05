@@ -34,5 +34,5 @@
   updateSettings();
   setInterval(function() {
     updateSettings();
-  }, 1000);
+  }, 5000);
 })();

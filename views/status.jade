@@ -15,6 +15,32 @@ block content
       button(class='btn', id='btnStop', style='width: 125px; height:50px; background-color:red', onclick='stopTest()') Stop Test
 
   div
+
+  pre.
+    Settings
+
+  pre.
+    P-Setting           Current
+  form(oninput='pSet.value=rangeInput.value')
+    input#rangeInput(type='range', max='100', min='0', name='rangeInput')
+    input(style='background:yellow', disabled='disabled', for='rangeInput', name='pSet')
+
+  pre.
+    I-Setting
+  form(oninput='pSet.value=rangeInput.value')
+    input#rangeInput(type='range', max='100', min='0', name='rangeInput')
+    input(style='background:orange', disabled='disabled', for='rangeInput', name='pSet')
+
+
+
+  pre.
+    D-Setting
+  form(oninput='pSet.value=rangeInput.value')
+    input#rangeInput(type='range', max='100', min='0', name='rangeInput')
+    input(style='background:pink', disabled='disabled', for='rangeInput', name='pSet')
+
+
+
   svg(class='Tchart')
   svg(class='Snpchart')
   script(src='http://code.jquery.com/jquery-1.4.2.min.js')
