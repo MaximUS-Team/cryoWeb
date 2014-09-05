@@ -16,8 +16,13 @@ router.post('/', function(req, res) {
   // get query either as request's body or query
   query = req.query ? req.body : req.query;
 
-  // Update DB on temp
+  // ensure the query has something
+  if (!query.time && !query.T && !query.Snp && !query.serverCommand) {
+    res.send(400);
+  }
+
   if (query.time && query.T) {
+    // update database with new temperature/time
     var currentTempModel = mongoose.model('currentTemp');
     var current = new currentTempModel ({
       time: query.time,
@@ -46,12 +51,10 @@ router.post('/', function(req, res) {
         oldDocs[i].remove();
       };
     });
-  } else {
-    res.send(400);
   }
 
-  // Update DB on S-params
   if (query.Snp) {
+    // update database with new SNP data
     (function() {
       var Snp = query.Snp
       var currentSnpModel = mongoose.model('currentSnp');
@@ -103,6 +106,28 @@ router.post('/', function(req, res) {
         }
       });
     })()
+  }
+
+  if (query.serverCommand) {
+    // update database with new server command
+    (function() {
+      var serverCmdSchema = mongoose.model('serverCommand');
+      // send a new command to the server
+      var date = new Date();
+      var enclosedMeta = query.meta ? query.meta : "";
+      serverCmdSchema.create({
+        time: date.toUTCString(),
+        command: query.serverCommand,
+        meta: enclosedMeta
+      }, function(err, doc) {
+        if (err) {
+          res.send(400);
+          return console.log("Error saving to DB");
+        }
+      });
+    })();
+    //console.log("Query received: " + query.serverCommand);
+    res.send(201);
   }
 });
 
