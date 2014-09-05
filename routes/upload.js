@@ -114,9 +114,11 @@ router.post('/', function(req, res) {
       var serverCmdSchema = mongoose.model('serverCommand');
       // send a new command to the server
       var date = new Date();
+      var enclosedMeta = query.meta ? query.meta : "";
       serverCmdSchema.create({
         time: date.toUTCString(),
-        command: query.serverCommand
+        command: query.serverCommand,
+        meta: enclosedMeta
       }, function(err, doc) {
         if (err) {
           res.send(400);

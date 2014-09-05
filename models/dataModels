@@ -20,7 +20,8 @@ var snpSchema = Schema({
 
 var serverCmdSchema = Schema({
     time: String,
-    command: String
+    command: String,
+    meta: String
 });
 
 var testSettingsSchema = Schema({
