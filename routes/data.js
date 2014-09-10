@@ -33,8 +33,8 @@ sendStatus = function(dataType, res) {
 
 sendCurrentTest = function(res) {
 	var currentTestSettingsModel = mongoose.model('testSettings');
-	currentTestSettingsModel.find({}, function(err, docs) {
-		res.send(docs);
+	currentTestSettingsModel.findOne({}, function(err, doc) {
+		res.send(doc);
 	})
 }
 
