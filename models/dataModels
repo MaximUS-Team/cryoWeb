@@ -34,11 +34,21 @@ var testSettingsSchema = Schema({
     testpoints: [String]
 });
 
+var updateTestSettingsSchema = Schema({
+    p: Number,
+    i: Number,
+    d: Number,
+    controlmode: String,
+    power: String
+})
+
 mongoose.model('currentTemp', currentTempSchema);
 mongoose.model('currentSnp', snpSchema);
 mongoose.model('serverCommand', serverCmdSchema);
 mongoose.model('testSettings', testSettingsSchema);
+mongoose.model('updateSettings', updateTestSettingsSchema);
 console.log('currentTemp');
 console.log('currentSnp');
 console.log('serverCommand');
 console.log('testSettings');
+console.log('updateSettings');

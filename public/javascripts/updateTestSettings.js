@@ -21,13 +21,26 @@
       // update the test skip button & test skip points
       if (res.testpoints && res.testpoints.length > 0) {
         if (status == "RUNNING" || status == "PAUSED") {
-          document.getElementById("btnSkip").disabled = true;
+          document.getElementById("btnSkip").disabled = false;
         }
       } else {
         document.getElementById("btnSkip").disabled = true;
       }
       // update the PID settings
+      document.getElementById("lblCurrentP").innerHTML = res.p;
+      document.getElementById("lblCurrentI").innerHTML = res.i;
+      document.getElementById("lblCurrentD").innerHTML = res.d;
       // update the temperature control settings
+      document.getElementById("lblCurrentControlMode").innerHTML = res.controlmode;
+      document.getElementById("lblCurrentPower").innerHTML = res.power;
+      // set the new test points
+      var tstpts = document.getElementById("remainingTestPoints");
+      tstpts.options.length = 0;
+      for (var point in res.testpoints) {
+        var option = document.createElement("option");
+        option.innerHTML = res.testpoints[point];
+        tstpts.add(option);
+      }
     });
   }
 

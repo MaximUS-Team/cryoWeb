@@ -17,7 +17,7 @@ router.post('/', function(req, res) {
   query = req.query ? req.body : req.query;
 
   // ensure the query has something
-  if (!query.time && !query.T && !query.Snp && !query.serverCommand) {
+  if (!query.time && !query.T && !query.Snp && !query.serverCommand && !query.updateSettings) {
     res.send(400);
   }
 
@@ -127,6 +127,27 @@ router.post('/', function(req, res) {
       });
     })();
     //console.log("Query received: " + query.serverCommand);
+    res.send(201);
+  }
+
+  if (query.updateSettings) {
+    // update database with new test settings
+    (function() {
+      var newSettingsSchema = mongoose.model('updateSettings');
+      // add the update settings to the server
+      newSettingsSchema.create({
+        p: query.updateSettings[0],
+        i: query.updateSettings[1],
+        d: query.updateSettings[2],
+        controlmode: query.updateSettings[3],
+        power: query.updateSettings[4]
+      }, function(err, doc) {
+        if (err) {
+          res.send(400);
+          return console.log("Error saving to DB");
+        }
+      });
+    })();
     res.send(201);
   }
 });
