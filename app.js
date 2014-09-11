@@ -47,10 +47,10 @@ var logger = new (winston.Logger)
 
 //Test logging Levels
 
-logger.log('info', 'info test.');
-logger.log('warning', 'warning test');
-logger.log('err', 'error test');
-logger.log('critical', 'critical test');
+//logger.log('info', 'info test.');
+//logger.log('warning', 'warning test');
+//logger.log('err', 'error test');
+//logger.log('critical', 'critical test');
 
 var routes = require('./routes/index');
 var upload = require('./routes/upload');

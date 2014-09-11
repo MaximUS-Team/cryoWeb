@@ -1,5 +1,10 @@
 function logTest(){
-	var logger = require('logger')
+	console.log('test log button console');
+	var winston = require('winston');
+	var MongoDB =require('winston-mongodb').MongoDB;
+	
+
+
+
 	logger.log('info', 'Log test.');
-	console.log('test log button console')
 };

@@ -2,6 +2,8 @@ extends layout
 
 block content
   h1= title
+  :markdown
+    Welcome to #{title} [View Logs](/logs)
   div
     #button
       script(src='./javascripts/pauseCurrentTest.js')
@@ -15,7 +17,11 @@ block content
 
       button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='stopTest()') Stop Current Test
 
-      button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='logTest()') Log Test Test
+      button(class='btn', style='width: 100px; height:50px; background-color:green', onclick='logTest()') Log Test Test
+
+        button(class='btn', style='width: 100px; height:50px; background-color:blue', onclick='logTest()') Logs
+
+
 
   div
   svg(class='Tchart')
@@ -23,4 +29,4 @@ block content
   script(src='http://code.jquery.com/jquery-1.4.2.min.js')
   script(src='http://d3js.org/d3.v3.min.js')
   script(src='./javascripts/currentTempPlot.js')
-  script(src='./javascripts/currentSnpPlot.js')
+  script(src='./javascripts/currentSnpPlot.js') 

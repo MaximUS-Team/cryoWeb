@@ -1,33 +1,36 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var winston = require('winston')
 
-/* GET users listing. */
+/* GET home page. */
 router.get('/', function(req, res) {
-  //res.send('coolio'); // http status
-  query = req.query;
-  if (query.type == "status") {
-  	sendStatus(query.data,res);
-  } else {
-  	res.send(400, 'No type specified. Did you mean type=status?');
-  }
+  res.render('logs', {
+  	title: 'CryoWeb Logs',
+  });
 });
 
-sendStatus = function(dataType, res) {
-	if (typeof dataType == 'undefined') {
-		res.send(400, 'No data specified.');
-	} else if (dataType == "T") {
-		var currentTempModel = mongoose.model('currentTemp');
-		currentTempModel.find({}, function(err, docs) {
-			res.send(docs);
-		});
-	} else if (dataType == "Snp") {
-		var currentSnpModel = mongoose.model('currentSnp');
-		currentSnpModel.find({}, function(err, docs) {
-			res.send(docs);
-		})
-	}
-}
 
 module.exports = router;
+
+mongoose.connect('mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo', function(err){
+	if(!err){
+		console.log('connected to mongodb');
+	} else{
+		throw err;
+	}
+});
+
+var schema = mongoose.Schema,
+ObjectID = Schema.ObjectID;
+
+var Logs = new Schema({
+	log : string
+});
+
+var Logs = mongoose.model('Logs', Logs);
+
+app.get('/', function(req, res){
+	Logs.find({}, function(err, docs){
+		res.render('logs', {docs: docs});
+	});
+});
