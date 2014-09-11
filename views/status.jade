@@ -1,23 +1,72 @@
 extends layout
-
+html(lang='en')
 block content
-  h1= title
-  div
-    #button
-      script(src='./javascripts/pauseCurrentTest.js')
-      script(src='./javascripts/skipTestPoint.js')
-      script(src='./javascripts/stopTest.js')
+  head
+    h1= title
 
-      button(class='btn', style='width: 100px; height:50px; background-color:orange', onclick='pauseCurrentTest()') Pause Current Test
+    link(rel='stylesheet', href='/stylesheets/status.css')
+    script(src='./javascripts/pauseCurrentTest.js')
+    script(src='./javascripts/skipTestPoint.js')
+    script(src='./javascripts/stopTest.js')
+    script(src='./javascripts/submitTestSettings.js')
 
-      button(class='btn', style='width: 100px; height:50px; background-color:yellow', onclick='skipTestPoint()') Skip Current Test Point
+    div
+    button(class='btn', id='btnPause', style='width: 125px; height:50px; background-color:orange', onclick='pauseCurrentTest()') Pause Test
 
-      button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='stopTest()') Stop Current Test
+    button(class='btn', id='btnSkip', style='width: 125px; height:50px; background-color:yellow', onclick='skipTestPoint()') Skip Test Point
 
-  div
-  svg(class='Tchart')
-  svg(class='Snpchart')
-  script(src='http://code.jquery.com/jquery-1.4.2.min.js')
-  script(src='http://d3js.org/d3.v3.min.js')
-  script(src='./javascripts/currentTempPlot.js')
-  script(src='./javascripts/currentSnpPlot.js')
+    button(class='btn', id='btnStop', style='width: 125px; height:50px; background-color:red', onclick='stopTest()') Stop Test
+    
+    
+    h2 Settings
+    div
+    p P:
+    label(for='currentPSet', id='lblCurrentP') --
+    form(oninput='pSet.value=rangeInput.value')
+      input#rangeInput(type='range', max='100', min='0', name='rangeInput')
+      input(style='background:yellow', disabled='disabled', for='rangeInput', name='pSet', value='50')
+    div
+    p I:
+    label(for='currentISet', id='lblCurrentI') --
+    form(oninput='iSet.value=rangeInput.value')
+      input#rangeInput(type='range', max='100', min='0', name='rangeInput')
+      input(style='background:orange', disabled='disabled', for='rangeInput', name='iSet', value='50')
+    div
+    p D:
+    label(for='currentDSet', id='lblCurrentD') --
+    form(oninput='dSet.value=rangeInput.value')
+      input#rangeInput(type='range', max='100', min='0', name='rangeInput')
+      input(style='background:pink', disabled='disabled', for='rangeInput', name='dSet', value='50')
+    div
+    p Control Mode:
+    label(for='currentCMode', id='lblCurrentControlMode') --
+    select#tempControl
+      option(value='autoPID')  Auto PID
+      option(value='autoPI')  Auto PI
+      option(value='manualPID')  Manual PID
+      option(value='manualPI')  Manual PI
+    div
+    p Power:
+    label(for='currentPower', id='lblCurrentPower') --
+    select#power
+      option(value='50mW')  50mW
+      option(value='500mW')  500mW
+      option(value='5W')  5W
+      option(value='50W')  50W
+    div
+      input(type='submit', value='Submit Settings', onclick='updateTestSettings()')
+    div
+    p Remaining Test Points:
+    select#remainingTestPoints
+      option(value='A')  A
+      option(value='B')  B
+      option(value='C')  C
+      option(value='D')  D
+    div
+    svg(class='Tchart')
+    svg(class='Snpchart')
+    script(src='http://code.jquery.com/jquery-1.4.2.min.js')
+    script(src='http://d3js.org/d3.v3.min.js')
+    script(src='./javascripts/currentTempPlot.js')
+    script(src='./javascripts/currentSnpPlot.js')
+    script(src='./javascripts/updateTestSettings.js')

@@ -19,18 +19,36 @@ var snpSchema = Schema({
 });
 
 var serverCmdSchema = Schema({
-    command: String
+    time: String,
+    command: String,
+    meta: String
 });
 
-var serverRspSchema = Schema({
-    response: String
+var testSettingsSchema = Schema({
+    status: String,
+    p: String,
+    i: String,
+    d: String,
+    controlmode: String,
+    power: String,
+    testpoints: [String]
 });
+
+var updateTestSettingsSchema = Schema({
+    p: Number,
+    i: Number,
+    d: Number,
+    controlmode: String,
+    power: String
+})
 
 mongoose.model('currentTemp', currentTempSchema);
 mongoose.model('currentSnp', snpSchema);
 mongoose.model('serverCommand', serverCmdSchema);
-mongoose.model('serverResponse', serverRspSchema);
+mongoose.model('testSettings', testSettingsSchema);
+mongoose.model('updateSettings', updateTestSettingsSchema);
 console.log('currentTemp');
 console.log('currentSnp');
 console.log('serverCommand');
-console.log('serverResponse');
+console.log('testSettings');
+console.log('updateSettings');
