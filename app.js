@@ -42,21 +42,22 @@ var logger = new (winston.Logger)
   new (winston.transports.File)({ filename: 'test.log'}),
   new (winston.transports.MongoDB)(
     {dbUri: 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo'})
-    //{ db: 'jcu-cryo', level: 'info', username: 'Jcu14.207@gmail.com', password: 'Cryogenic', port: '10003', host: 'admin:Cryogenic@oceanic.mongohq.com' })
   ]
 })
 
 //Test logging Levels
 
-logger.log('info', 'info test.');
-logger.log('warning', 'warning test');
-logger.log('err', 'error test');
-logger.log('critical', 'critical test');
+//logger.log('info', 'info test.');
+//logger.log('warning', 'warning test');
+//logger.log('err', 'error test');
+//logger.log('critical', 'critical test');
 
 var routes = require('./routes/index');
 var upload = require('./routes/upload');
 var status = require('./routes/status');
 var data = require('./routes/data');
+var logs = require('./routes/logs');
+
 
 var app = express();
 // view engine setup
@@ -74,6 +75,7 @@ app.use('/', routes);
 app.use('/upload', upload);
 app.use('/status', status);
 app.use('/data', data);
+app.use('/logs', logs);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -107,8 +109,7 @@ connect()
 
 // Error handler
 mongoose.connection.on('error', function (err) {
-  console.log(err);
-  //console.log("Ben");
+  logger.log('ere', err);
 })
 
 // Reconnect when closed
@@ -132,7 +133,4 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
-
-//winston.log('info', 'test 1!');
 module.exports = app;

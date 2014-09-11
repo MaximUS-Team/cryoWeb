@@ -10,6 +10,8 @@ router.get('/', function(req, res) {
   	sendStatus(query.data,res);
   } else if (query.type == "current") {
   	sendCurrentTest(res);
+  } else if (query.type == "log") {
+  	sendLogs(res);
   } else {
   	res.send(400, 'No type specified. Did you mean type=status?');
   }
@@ -36,6 +38,13 @@ sendCurrentTest = function(res) {
 	currentTestSettingsModel.findOne({}, function(err, doc) {
 		res.send(doc);
 	})
+}
+
+sendLogs = function(res) {
+	var logsModel = mongoose.model('logs');
+	logsModel.find({}).sort({timestamp: -1}).limit(10).exec('find', function(err, docs) {
+		res.send(docs);
+	});
 }
 
 module.exports = router;

@@ -3,7 +3,9 @@ html(lang='en')
 block content
   head
     h1= title
-
+  :markdown
+    Welcome to #{title} [View Logs](/logs)
+  div
     link(rel='stylesheet', href='/stylesheets/status.css')
     script(src='./javascripts/pauseCurrentTest.js')
     script(src='./javascripts/skipTestPoint.js')
@@ -11,6 +13,7 @@ block content
     script(src='./javascripts/submitTestSettings.js')
 
     div
+    br
     button(class='btn', id='btnPause', style='width: 125px; height:50px; background-color:orange', onclick='pauseCurrentTest()') Pause Test
 
     button(class='btn', id='btnSkip', style='width: 125px; height:50px; background-color:yellow', onclick='skipTestPoint()') Skip Test Point
@@ -24,19 +27,19 @@ block content
     label(for='currentPSet', id='lblCurrentP') --
     form(oninput='pSet.value=rangeInput.value')
       input#rangeInput(type='range', max='100', min='0', name='rangeInput')
-      input(style='background:yellow', disabled='disabled', for='rangeInput', name='pSet', value='50')
+      input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='pSet', value='50')
     div
     p I:
     label(for='currentISet', id='lblCurrentI') --
     form(oninput='iSet.value=rangeInput.value')
       input#rangeInput(type='range', max='100', min='0', name='rangeInput')
-      input(style='background:orange', disabled='disabled', for='rangeInput', name='iSet', value='50')
+      input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='iSet', value='50')
     div
-    p D:
+    p D: 
     label(for='currentDSet', id='lblCurrentD') --
     form(oninput='dSet.value=rangeInput.value')
       input#rangeInput(type='range', max='100', min='0', name='rangeInput')
-      input(style='background:pink', disabled='disabled', for='rangeInput', name='dSet', value='50')
+      input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='dSet', value='50')
     div
     p Control Mode:
     label(for='currentCMode', id='lblCurrentControlMode') --

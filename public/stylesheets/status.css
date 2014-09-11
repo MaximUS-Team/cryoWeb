@@ -3,14 +3,14 @@ h2{
 	font-size: 20px;
 	padding-left: 100px;
 }
-
 p{
-	color: red;
+	color: black;
 	font-weight: bold;
 	font-size: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
 	display: inline-block;
+	text-align:center;
 }
 form{
 	display: inline-block;
@@ -18,20 +18,27 @@ form{
 input{
 	display: inline-block;
 }
+label{
+	background: #C5E3BF;
+	padding-right: 100px;
+	margin-right: 50px;
+}
+input{
+	margin-left: 20px;
+}
+button{ 
+	margin-left: 100px;
+}
 #input{
 	display: inline-block;
 	margin-right: 20px;	
 }
 #rangeInput{
-	margin-left: 210px;
-	padding-left:100px;
-	margin-right:20px;
-}
-label{
-	background: yellow;
-	padding-right: 100px;
-	margin-right: 50px;
+	margin-left: 150px;
+	padding-left: 100px;
+	margin-right: 20px;
 }
 #submit{
 	margin-left: 20px;
 }
+
