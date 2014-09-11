@@ -8,6 +8,8 @@ router.get('/', function(req, res) {
   query = req.query;
   if (query.type == "status") {
   	sendStatus(query.data,res);
+  } else if (query.type == "current") {
+  	sendCurrentTest(res);
   } else {
   	res.send(400, 'No type specified. Did you mean type=status?');
   }
@@ -27,6 +29,13 @@ sendStatus = function(dataType, res) {
 			res.send(docs);
 		})
 	}
+}
+
+sendCurrentTest = function(res) {
+	var currentTestSettingsModel = mongoose.model('testSettings');
+	currentTestSettingsModel.findOne({}, function(err, doc) {
+		res.send(doc);
+	})
 }
 
 module.exports = router;
