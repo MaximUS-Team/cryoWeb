@@ -5,14 +5,16 @@ block content
   :markdown
     Welcome to #{title} [Status](/status)
   div
-    #button
-      script(src='./javascripts/logTest.js')
 
-      button(class='btn', style='width: 100px; height:50px; background-color:green', onclick='logTest()') Log Test Test
+      button(class='btn', style='width: 100px; height:50px; background-color:green', onclick='logTest()') Update Log
 
-      p Ben
+      p Press update log to retrieve last 10 entries:
+      ul#lstLog
+
 
   div
 
 
   script(src='./logs.js')
+  script(src='./javascripts/logTest.js')
+  script(src='http://code.jquery.com/jquery-1.4.2.min.js')

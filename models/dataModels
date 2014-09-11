@@ -42,13 +42,21 @@ var updateTestSettingsSchema = Schema({
     power: String
 })
 
+var loggerSchema = Schema({
+    message: String,
+    timestamp: String,
+    level: String
+})
+
 mongoose.model('currentTemp', currentTempSchema);
 mongoose.model('currentSnp', snpSchema);
 mongoose.model('serverCommand', serverCmdSchema);
 mongoose.model('testSettings', testSettingsSchema);
 mongoose.model('updateSettings', updateTestSettingsSchema);
+mongoose.model('logs', loggerSchema);
 console.log('currentTemp');
 console.log('currentSnp');
 console.log('serverCommand');
 console.log('testSettings');
 console.log('updateSettings');
+console.log('logs');
