@@ -251,3 +251,9 @@
 {"level":"warning","message":"warning test","timestamp":"2014-09-11T08:47:48.857Z"}
 {"level":"err","message":"error test","timestamp":"2014-09-11T08:47:48.857Z"}
 {"level":"critical","message":"critical test","timestamp":"2014-09-11T08:47:48.857Z"}
+{"level":"info","message":"info test.","timestamp":"2014-10-03T00:27:10.732Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-10-03T00:27:10.736Z"}
+{"level":"info","message":"info test.","timestamp":"2014-10-03T00:33:01.910Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-10-03T00:33:01.914Z"}
+{"level":"info","message":"info test.","timestamp":"2014-10-03T00:46:19.724Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-10-03T00:46:19.728Z"}

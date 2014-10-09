@@ -55,10 +55,9 @@ var logger = new (winston.Logger)
 function Log(level, message){
   this.level = level;
   this.message = message;
+  //logger.log(level, message);
   console.log(info, message);
-  logger.log(level, message);
-  
-  
+  logger.log(info, message);
 
 };
 
@@ -144,4 +143,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-module.exports.logging = Log;
