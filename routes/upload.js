@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var _ = require('underscore');
 var historyLength = 10; // mins
-
+var log = require('./logging');
 /* GET: for debug only. *
 router.get('/', function(req, res) {
   query = req.query;
@@ -15,6 +15,9 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   // get query either as request's body or query
   query = req.query ? req.body : req.query;
+
+  logging.Log('info', query);
+  console.log("test logging");
 
   // ensure the query has something
   if (!query.time && !query.T && !query.Snp && !query.serverCommand && !query.updateSettings) {
