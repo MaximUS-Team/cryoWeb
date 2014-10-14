@@ -68,7 +68,7 @@ connect()
 
 // Error handler
 mongoose.connection.on('error', function (err) {
-  logger.log('err', err);
+  logger.logThis'err', err);
 })
 
 // Reconnect when closed

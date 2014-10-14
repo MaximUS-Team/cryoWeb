@@ -81,7 +81,8 @@ router.post('/', function(req, res) {
       currentSnpModel.remove({}, function (err) {
         if (err) {
           res.send(400);
-          return console.log("Error removing Snp from DB");
+          //return console.log("Error removing Snp from DB");
+          logger.logThis('err', "Error removing Snp from DB");
         } else {
           // check how many entries left
           currentSnpModel.find({}, function(err, docs) {
@@ -104,13 +105,15 @@ router.post('/', function(req, res) {
                   }, function(err, doc) {
                     if (err) {
                       res.send(400);
-                      return console.log("Error saving to DB");
+                      //return console.log("Error saving to DB");
+                      logger.logThis("err","Error saving to DB" )
                     }
                   });
                 }
               } else {
-                console.log(
-                  'for some reason query.Snp from upload is blank.')
+                //console.log(
+                  //'for some reason query.Snp from upload is blank.')
+                logger.logThis('warning', 'for some reason query.Snp from upload is blank.')
               }
             }
           });
@@ -133,7 +136,8 @@ router.post('/', function(req, res) {
       }, function(err, doc) {
         if (err) {
           res.send(400);
-          return console.log("Error saving to DB");
+          //return console.log("Error saving to DB");
+          logger.logThis("err", "Error saving to DB")
         }
       });
     })();
@@ -155,7 +159,8 @@ router.post('/', function(req, res) {
       }, function(err, doc) {
         if (err) {
           res.send(400);
-          return console.log("Error saving to DB");
+          //return console.log("Error saving to DB");
+          logger.logThis('err', "Error saving to DB")
         }
       });
     })();
