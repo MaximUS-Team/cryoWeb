@@ -19,8 +19,6 @@ var app = express();
 
 //Logger is active
 logger.logThis('info', 'Logger Active on app.js');
-console.log(logger.hello());
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

@@ -51,9 +51,4 @@ var logThis = function(level, message){
   logger.log(level, message);
 };
 
-function hello(){
-	return "Hello World";
-}
-
 module.exports.logThis = logThis;
-module.exports.hello = hello;

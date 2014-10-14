@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var logger = require("../public/javascripts/logs.js");
 var _ = require('underscore');
 var historyLength = 10; // mins
-var logger = require("./logs.js");
 
 
 //logger.logThis('info', 'Logger Active on app.js');
-console.log("test uploads.js");
-console.log(logger.hello());
+logger.logThis('info', "Logger Active on uploads.js")
+
 //logger.logThis('info', 'Logger Active on app.js');
 
 /* GET: for debug only. *
