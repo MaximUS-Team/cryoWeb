@@ -3,7 +3,14 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var _ = require('underscore');
 var historyLength = 10; // mins
-var log = require('./logging');
+var logger = require("./logs.js");
+
+
+//logger.logThis('info', 'Logger Active on app.js');
+console.log("test uploads.js");
+console.log(logger.hello());
+//logger.logThis('info', 'Logger Active on app.js');
+
 /* GET: for debug only. *
 router.get('/', function(req, res) {
   query = req.query;
@@ -16,8 +23,9 @@ router.post('/', function(req, res) {
   // get query either as request's body or query
   query = req.query ? req.body : req.query;
 
-  logging.Log('info', query);
+  //app.Log('info', 'Info Test');
   console.log("test logging");
+  logger.logThis('info', "Info Test");
 
   // ensure the query has something
   if (!query.time && !query.T && !query.Snp && !query.serverCommand && !query.updateSettings) {
