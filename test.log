@@ -34,3 +34,559 @@
 {"level":"info","message":"Logger Active","timestamp":"2014-10-14T07:56:41.501Z"}
 {"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-14T07:56:41.552Z"}
 {"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-14T07:56:41.568Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-15T00:38:29.647Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-15T00:38:29.690Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-15T00:38:29.713Z"}
+{"level":"err","message":"","timestamp":"2014-10-15T04:20:07.056Z"}
+{"level":"err","message":"","timestamp":"2014-10-15T08:17:38.889Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-16T22:26:33.083Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-16T22:26:33.127Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-16T22:26:33.147Z"}
+{"level":"err","message":"","timestamp":"2014-10-16T22:31:16.912Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T00:02:54.284Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:00:58.683Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:00:59.690Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:00.694Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:01.695Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:02.714Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:03.717Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:04.718Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:05.720Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:06.722Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T04:01:07.724Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T05:24:30.874Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:07.854Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:08.867Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:09.869Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:10.877Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:11.877Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:12.879Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:13.881Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:14.882Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:15.883Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:16.886Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T06:24:17.888Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T07:58:38.249Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T12:43:26.879Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T12:43:27.882Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T12:43:28.883Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T12:43:29.897Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T14:14:16.238Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:40.928Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:41.939Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:42.946Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:43.948Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:44.951Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:45.952Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:46.955Z"}
+{"level":"err","message":"","timestamp":"2014-10-17T22:19:47.969Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-22T01:06:19.263Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-22T01:06:19.296Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-22T01:06:19.312Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T01:36:21.017Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T01:43:37.249Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T01:44:50.394Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T02:15:57.163Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T02:22:58.905Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T04:57:22.415Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T04:57:23.420Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T04:57:24.420Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T04:57:25.421Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T04:57:26.424Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:00:50.202Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:01:02.935Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:03:34.083Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:03:56.196Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:10.965Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:11.983Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:13.052Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:14.054Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:15.139Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:16.144Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:17.152Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:18.155Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:19.256Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:20.283Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:21.284Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:22.298Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:23.301Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:24.351Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:25.441Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:26.519Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:27.618Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:28.685Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:29.758Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:30.850Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:31.852Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:32.856Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:33.859Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:34.861Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:35.864Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:36.867Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:37.870Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:38.874Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:39.876Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:40.881Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:41.884Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:42.887Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:43.890Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:44.891Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:45.894Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:46.897Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:47.910Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:48.912Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:49.914Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:50.916Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:51.918Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:52.922Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:53.925Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:54.932Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:55.935Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:56.938Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:57.939Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:58.941Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:05:59.942Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:00.956Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:01.957Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:03.007Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:04.011Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:05.088Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:06.089Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:07.163Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:08.165Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:09.204Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:10.211Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:11.213Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:12.253Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:13.256Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:14.271Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:15.303Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:16.395Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:17.495Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:18.498Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:19.528Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:20.553Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:21.650Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:22.656Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:23.660Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:24.666Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:25.756Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:26.765Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:27.773Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:28.778Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:29.786Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:30.795Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:31.798Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:32.816Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:33.889Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:34.927Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:35.970Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:37.008Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:38.051Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:39.098Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:40.138Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:41.173Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:42.270Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:43.361Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:44.409Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:45.412Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:46.460Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:47.520Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:48.560Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:49.616Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:50.634Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:51.680Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:52.716Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:53.776Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:54.819Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:55.849Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:56.892Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:57.936Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:06:58.977Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:00.051Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:01.127Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:02.180Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:03.233Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:04.329Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:05.396Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:06.398Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:07.500Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:08.541Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:09.635Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:10.694Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:11.763Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:12.765Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:13.769Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:14.774Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:15.805Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:16.865Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:17.938Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:19.014Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:20.054Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:21.112Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:22.164Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:23.247Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:24.250Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:25.301Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:26.324Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:27.428Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:28.482Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:29.520Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:30.586Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:31.638Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:32.711Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:33.778Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:34.853Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:35.835Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:36.926Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:37.966Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:39.007Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:40.045Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:41.099Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:42.122Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:43.177Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:44.237Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:45.291Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:46.364Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:47.417Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:48.490Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:49.541Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:50.548Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:51.595Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:52.659Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:53.707Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:54.808Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:55.855Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:56.921Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:57.976Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:07:59.070Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:00.115Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:01.156Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:02.197Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:03.261Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:04.262Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:05.315Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:06.376Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:07.411Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:08.454Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:09.507Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:10.552Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:11.609Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:12.656Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:13.709Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:14.766Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:15.816Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:16.864Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:17.928Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:18.934Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:19.983Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:21.019Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:22.057Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:23.140Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:24.217Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:25.311Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:26.353Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:27.455Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:28.519Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:29.571Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:30.621Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:31.625Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:32.630Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:33.639Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:34.647Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:35.656Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:36.664Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:37.672Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:38.680Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:39.685Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:40.716Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:41.769Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:42.816Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:43.864Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:44.919Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:45.962Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:47.003Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:48.024Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:49.073Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:50.145Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:51.191Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:52.283Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:53.321Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:54.396Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:55.443Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:56.493Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:57.535Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:58.592Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:08:59.630Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:00.689Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:01.724Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:02.789Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:03.864Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:04.958Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:06.018Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:07.087Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:08.134Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:09.170Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:10.199Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:11.244Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:12.281Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:13.317Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:14.379Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:15.453Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:16.513Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:17.533Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:18.578Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:19.644Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:20.673Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:21.680Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:22.740Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:23.834Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:24.929Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:25.984Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:27.083Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:28.122Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:29.178Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:30.214Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:31.262Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:32.300Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:33.362Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:34.421Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:35.491Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:36.541Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:37.606Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:38.687Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:39.757Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:40.809Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:41.846Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:42.849Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:43.865Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:44.880Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:45.946Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:46.990Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:48.027Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:49.061Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:50.115Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:51.130Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:52.158Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:53.172Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:54.184Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:55.254Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:56.273Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:57.302Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:58.321Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:09:59.354Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:00.395Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:01.413Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:02.446Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:03.465Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:04.497Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:05.541Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:06.574Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:07.591Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:08.648Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:09.694Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:10.728Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:11.744Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:12.787Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:13.807Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:14.870Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:15.892Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:16.924Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:17.938Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:18.971Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:19.995Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:21.041Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:22.098Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:23.178Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:24.265Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:25.328Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:26.363Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:27.385Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:28.465Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:29.551Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:30.637Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:31.733Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:32.825Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:33.843Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:34.926Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:35.934Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:36.936Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:37.938Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:38.943Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:39.979Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:41.058Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:42.066Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:43.070Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:44.084Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:45.122Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:46.195Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:47.204Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:48.217Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:49.251Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:50.354Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:51.386Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:52.406Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:53.447Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:54.468Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:55.546Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:56.582Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:57.621Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:58.645Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:10:59.680Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:00.703Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:01.732Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:02.745Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:03.777Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:04.795Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:05.859Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:06.881Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:07.910Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:08.922Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:09.956Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:10.976Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:11.981Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:13.018Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:14.037Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:15.068Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:16.120Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:17.159Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:18.169Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:19.203Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:20.219Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:21.252Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:22.292Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:23.325Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:24.358Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:25.383Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:26.477Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:27.549Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:28.631Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:29.731Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:30.801Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:31.890Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:32.989Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:34.010Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:35.017Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T05:11:36.018Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T06:11:36.276Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T06:11:37.278Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T06:11:38.279Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T06:11:39.279Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:38.707Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:39.725Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:40.737Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:41.740Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:42.742Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:43.742Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:44.743Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:45.743Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:46.745Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:47.746Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:48.747Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:49.749Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:50.750Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:51.752Z"}
+{"level":"err","message":"","timestamp":"2014-10-22T22:27:52.753Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T08:57:31.121Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T08:57:31.207Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T08:57:31.251Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T09:34:26.226Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T09:34:26.260Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T09:34:26.271Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T09:38:45.108Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T10:54:11.782Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T10:55:40.246Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T10:55:40.290Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T10:55:40.306Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:00:42.553Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:00:53.592Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T11:03:30.478Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T11:03:30.514Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T11:03:30.527Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:08:14.844Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:10:43.137Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:10:54.176Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:17:07.576Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:20:47.741Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:25:47.706Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:31:30.122Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:34:52.142Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T11:52:05.284Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-10-23T11:52:05.287Z"}
+{"level":"err","message":"error test","timestamp":"2014-10-23T11:52:05.288Z"}
+{"level":"critical","message":"critical test","timestamp":"2014-10-23T11:52:05.288Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T11:52:05.318Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T11:52:05.330Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T11:54:52.182Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T12:01:11.972Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T12:12:21.790Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T12:20:48.785Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:03.945Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:04.957Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:05.959Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:06.964Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:07.966Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:08.969Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:09.971Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:10.973Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:11.974Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:12.975Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:13.990Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:14.990Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:16.002Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:17.004Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:18.004Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:19.006Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:20.007Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:21.009Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:22.010Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:23.012Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:24.013Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:25.015Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:26.017Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:27.019Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:28.020Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:29.022Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:30.035Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:31.036Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:32.037Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:33.052Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:11:34.053Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T22:12:02.125Z"}
+{"level":"warning","message":"warning test","timestamp":"2014-10-23T22:12:02.126Z"}
+{"level":"err","message":"error test","timestamp":"2014-10-23T22:12:02.126Z"}
+{"level":"critical","message":"critical test","timestamp":"2014-10-23T22:12:02.126Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T22:12:02.140Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T22:12:02.146Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T22:17:45.621Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T22:17:45.655Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T22:17:45.671Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:18:58.064Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:18:59.079Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:00.083Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:01.086Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:02.088Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:03.092Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:04.096Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:05.097Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:06.101Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:07.106Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:08.118Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:09.127Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:10.130Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:11.133Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:12.135Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:13.138Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:14.141Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:15.144Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:16.148Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:17.152Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:18.166Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:19.170Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:20.173Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:21.176Z"}
+{"level":"err","message":"Error: failed to connect to [oceanic.mongohq.com:10003]ben","timestamp":"2014-10-23T22:19:22.180Z"}
+{"level":"info","message":"Logger Active","timestamp":"2014-10-23T22:20:08.345Z"}
+{"level":"info","message":"Logger Active on uploads.js","timestamp":"2014-10-23T22:20:08.386Z"}
+{"level":"info","message":"Logger Active on app.js","timestamp":"2014-10-23T22:20:08.403Z"}
+{"level":"err","message":"","timestamp":"2014-10-23T22:40:55.697Z"}

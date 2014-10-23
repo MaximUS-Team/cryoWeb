@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 var logger = require("./public/javascripts/logs.js");
 
+
 var routes = require('./routes/index');
 var upload = require('./routes/upload');
 var status = require('./routes/status');
@@ -16,6 +17,7 @@ var logs = require('./routes/logs');
 
 
 var app = express();
+
 
 //Logger is active
 logger.logThis('info', 'Logger Active on app.js');

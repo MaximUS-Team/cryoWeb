@@ -31,7 +31,7 @@ var logger = new (winston.Logger)
   (loggingLevels.levels),
   transports: [
   new (winston.transports.Console)(),
-  new (winston.transports.File)({ filename: 'test.log'}),
+  //new (winston.transports.File)({ filename: 'test.log'}),
   new (winston.transports.MongoDB)(
     {dbUri: 'mongodb://admin:Cryogenic@oceanic.mongohq.com:10003/jcu-cryo'})
   ]
@@ -47,7 +47,6 @@ logger.log('info', 'Logger Active');
 var logThis = function(level, message){
   this.level = level;
   this.message = message;
-  //console.log(level, message);
   logger.log(level, message);
 };
 

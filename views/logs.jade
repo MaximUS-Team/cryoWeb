@@ -8,13 +8,13 @@ block content
 
       button(class='btn', style='width: 100px; height:50px; background-color:green', onclick='logTest()') Update Log
 
-      button(class='btn', style='width: 100px; height:50px; background-color:blue', onclick='logTest()') Info
+      button(class='btn', style='width: 100px; height:50px; background-color:blue', onclick='infoLog()') Info
 
-      button(class='btn', style='width: 100px; height:50px; background-color:yellow', onclick='logTest()') Warning
+      button(class='btn', style='width: 100px; height:50px; background-color:yellow', onclick='warningLog()') Warning
 
-      button(class='btn', style='width: 100px; height:50px; background-color:orange', onclick='logTest()') Error
+      button(class='btn', style='width: 100px; height:50px; background-color:orange', onclick='errorLog()') Error
 
-      button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='logTest()') Critical
+      button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='criticalLog()') Critical
 
       p Press update log to retrieve last 10 entries:
       p Press Info, Error, Warning or Critical to retrieve the last 10 entries of that error level:
@@ -24,4 +24,8 @@ block content
   div
 
   script(src='./javascripts/logTest.js')
+  script(src='./javascripts/infoLog.js')
+  script(src='./javascripts/criticalLog.js')
+  script(src='./javascripts/errorLog.js')
+  script(src='./javascripts/warningLog.js')
   script(src='http://code.jquery.com/jquery-1.4.2.min.js')

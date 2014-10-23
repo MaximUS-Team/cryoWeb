@@ -42,7 +42,7 @@ sendCurrentTest = function(res) {
 
 sendLogs = function(res) {
 	var logsModel = mongoose.model('logs');
-	logsModel.find({}).sort({timestamp: -1}).limit(10).exec('find', function(err, docs) {
+	logsModel.find({}).sort({timestamp: -1}).limit(100).exec('find', function(err, docs) {
 		res.send(docs);
 	});
 }
