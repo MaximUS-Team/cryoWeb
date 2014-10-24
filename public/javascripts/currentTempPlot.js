@@ -47,7 +47,7 @@
 
     getT = function(data) { return data.T; }
     getTime = function(data) { return data.time; }
-    updatePlot = function() {
+    updateCurrentTempPlot = function() {
       $.getJSON("./data?type=status&data=T", function(res) {
         // Update data
         /*
@@ -95,8 +95,8 @@
       });
     }
 
-    updatePlot();
+    updateCurrentTempPlot();
     setInterval(function() {
-        updatePlot();
+        updateCurrentTempPlot();
     },5000);
 })()

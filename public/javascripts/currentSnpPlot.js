@@ -49,7 +49,7 @@
 
   getT = function(data) { return data.T; }
   getTime = function(data) { return data.time; }
-  updatePlot = function() {
+  updateCurrentSnpPlot = function() {
     $.getJSON("./data?type=status&data=Snp", function(res) {
       S11 = [];
       S12 = [];
@@ -104,8 +104,8 @@
     });
   }
 
-  updatePlot();
+  updateCurrentSnpPlot();
   setInterval(function() {
-    updatePlot();
-  },10000);
+    updateCurrentSnpPlot();
+  }, 1000);
 })()

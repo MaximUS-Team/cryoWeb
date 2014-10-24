@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var _ = require('underscore');
+var $ = require('jquery');
+
 var historyLength = 10; // mins
 
 /* GET: for debug only. *
@@ -15,6 +17,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   // get query either as request's body or query
   query = req.query ? req.body : req.query;
+  console.log(query)
 
   // ensure the query has something
   if (!query.time && !query.T && !query.Snp && !query.serverCommand && !query.updateSettings) {
@@ -124,8 +127,12 @@ function parseSnp(Snp) {
         if (docs.length == 0) {
           // add new S-params
           if (Snp) {
+            if (typeof Snp == 'string' || Snp instanceof String) {
+              Snp = JSON.parse(Snp);
+            }
             for (var i=0; i < Snp.length; i++) {
               var SnpPoint = Snp[i];
+              //console.log(SnpPoint);
               currentSnpModel.create({
                 "Frequency": SnpPoint["Frequency"],
                 "S11 Re": SnpPoint["S11 Re"],
