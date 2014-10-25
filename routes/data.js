@@ -12,6 +12,10 @@ router.get('/', function(req, res) {
   	sendCurrentTest(res);
   } else if (query.type == "log") {
   	sendLogs(res);
+  } else if (query.type == "tempcontrol") {
+  	sendTempControl(res)
+  } else if (query.type == "command") {
+  	sendCommand(res)
   } else {
   	res.send(400, 'No type specified. Did you mean type=status?');
   }
@@ -36,6 +40,20 @@ sendStatus = function(dataType, res) {
 sendCurrentTest = function(res) {
 	var currentTestSettingsModel = mongoose.model('testSettings');
 	currentTestSettingsModel.findOne({}, function(err, doc) {
+		res.send(doc);
+	})
+}
+
+sendTempControl = function(res) {
+	var currentTestSettingsModel = mongoose.model('updateSettings');
+	currentTestSettingsModel.findOneAndRemove({}, function(err, doc) {
+		res.send(doc);
+	})
+}
+
+sendCommand = function(res) {
+	var currentTestSettingsModel = mongoose.model('serverCommand');
+	currentTestSettingsModel.findOneAndRemove({}, function(err, doc) {
 		res.send(doc);
 	})
 }
