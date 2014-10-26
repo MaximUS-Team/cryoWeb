@@ -30,9 +30,6 @@
     .attr("dy", "-.5em")
     .style("text-anchor", "middle")
     .text("Real");
-  var x = d3.scale.linear()
-    .domain([-1, 1]) // passive limits
-    .range([0, width]);
   // create Y axis
   var yAxis = d3.svg.axis()
     .orient("left");
@@ -45,9 +42,6 @@
     .attr("dy", ".71em")
     .style("text-anchor", "end")
     .text("Imaginary");
-  var y = d3.scale.linear()
-    .domain([-1, 1])
-    .range([height, 0]);
 
   // create path generator
   var path11 = snpchart.append("path")
@@ -63,7 +57,8 @@
     .attr("class", "line")
     .style("stroke", S22col);
 
-  var S11 = [], S12 = [], S21 = [], S22 = [];
+  var S11 = [], S12 = [], S21 = [], S22 = [],
+      x, y;
 
   getT = function(data) { return data.T; }
   getTime = function(data) { return data.time; }
@@ -92,35 +87,45 @@
           Im: parseFloat(element["S22 Im"])
         });
       });
-      S11.sort(function(a, b) { return b.Frequency - a.Frequency; });
-      S12.sort(function(a, b) { return b.Frequency - a.Frequency; });
-      S11.sort(function(a, b) { return b.Frequency - a.Frequency; });
-      S22.sort(function(a, b) { return b.Frequency - a.Frequency; });
+      var freqSort = function(a, b) { return b.Frequency - a.Frequency; };
+      S11.sort(freqSort);
+      S12.sort(freqSort);
+      S21.sort(freqSort);
+      S22.sort(freqSort);
     });
   }
   setupPlotType = function() {
     switch(d3.select("#selectType").node().value){
       case "Re vs. Im":
-        console.log("Re vs. Im");
+        setupReIm();
+        plotFunc = plotReIm;
+        break;
+      case "Magnitude (abs) vs. Freq":
+        setupMagFreq();
+        plotFunc = plotMagFreq;
         break;
       default:
-        console.log("Error: Unknown selection " + d3.select("#selectType").node().value);}
+        console.log("Error: Unknown selection " + d3.select("#selectType").node().value);
+    }
+  }
+  setupReIm = function() {
+    snpchart.select(".x.axis").select("text").text("Real");
+    snpchart.select(".y.axis").select("text").text("Imaginary");
+  }
+  setupMagFreq = function() {
+    snpchart.select(".x.axis").select("text").text("Frequency");
+    snpchart.select(".y.axis").select("text").text("Magnitude");
   }
   updateSnpPlot = function() {
-    plotReIm();
-  }
-  plotReIm = function() {
+    var line = plotFunc();
+
     // update axes // can this go outside?
     snpchart.selectAll(".x.axis")
       .call(xAxis.scale(x));
     snpchart.selectAll(".y.axis")
       .call(yAxis.scale(y));
 
-    // data join
-    var line = d3.svg.line()
-      .x(function(d) { return x(d.Re); })
-      .y(function(d) { return y(d.Im); })
-      .interpolate("linear");
+    // Apply Data
     if (d3.select('#doS11')[0][0].checked) {
       path11.datum(S11).attr("d", line);
     } else {
@@ -142,6 +147,43 @@
       path22.datum(0).attr("d", line);
     }
   }
+  plotReIm = function() {
+    x = d3.scale.linear()
+      .domain([-1, 1]) // passive limits
+      .range([0, width]);
+    y = d3.scale.linear()
+      .domain([-1, 1])
+      .range([height, 0]);
+
+    // data join
+    var line = d3.svg.line()
+      .x(function(d) { return x(d.Re); })
+      .y(function(d) { return y(d.Im); })
+      .interpolate("linear");
+    return(line);
+  }
+  plotMagFreq = function() {
+    var getFreq = function(d) { return d.Frequency; }
+    var getMag = function(d) { return Math.sqrt(d.Re*d.Re + d.Im*d.Im); }
+    var xmin = d3.min([S11, S12, S21, S22], function(d) { return d3.min(d, getFreq); });
+    var xmax = d3.max([S11, S12, S21, S22], function(d) { return d3.max(d, getFreq); });
+    var ymin = d3.min([S11, S12, S21, S22], function(d) { return d3.min(d, getMag); });
+    var ymax = d3.max([S11, S12, S21, S22], function(d) { return d3.max(d, getMag); });
+    x = d3.scale.linear()
+      .domain([xmin, xmax])
+      .range([0, width]);
+    y = d3.scale.linear()
+      .domain([ymin, ymax])
+      .range([height, 0]);
+      
+    // data join
+    var line = d3.svg.line()
+      .x(function(d) { return x(d.Frequency); })
+      .y(function(d) { return y(Math.sqrt(d.Re*d.Re + d.Im*d.Im)); })
+      .interpolate("linear");
+    return(line);
+  }
+  var plotFunc = plotReIm;
   
   var selectEl = d3.select("#selectSparams")
     .append("select")
