@@ -11,7 +11,7 @@ block content
     script(src='./javascripts/skipTestPoint.js')
     script(src='./javascripts/stopTest.js')
     script(src='./javascripts/submitTestSettings.js')
-    script(src='./javascripts/downloadSNPData.js')
+    script(src='./javascripts/downloadData.js')
 
     div
     br
@@ -22,6 +22,8 @@ block content
     button(class='btn', id='btnStop', style='width: 125px; height:50px; background-color:red', onclick='stopTest()') Stop Test
     
     button(class='btn', id='btnDownloadSNP', style='width: 150px; height:50px; background-color:green', onclick='downloadSNPData()') Download SNP Data
+
+    button(class='btn', id='btnDownloadSVG', style='width: 150px; height:50px; background-color:blue', onclick='activateSVGCrowbar()') Download Graph
     
     h2 Settings
     div
