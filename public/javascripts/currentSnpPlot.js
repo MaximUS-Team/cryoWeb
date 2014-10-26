@@ -58,7 +58,7 @@
     .style("stroke", S22col);
 
   var S11 = [], S12 = [], S21 = [], S22 = [],
-      x, y;
+      x = d3.scale.linear(), y = d3.scale.linear();
 
   getT = function(data) { return data.T; }
   getTime = function(data) { return data.time; }
@@ -99,10 +99,19 @@
       case "Re vs. Im":
         setupReIm();
         plotFunc = plotReIm;
+        d3.select('#doLogY').property("checked", false)
+        d3.select('#doLogY').property("disabled", true)
         break;
-      case "Magnitude (abs) vs. Freq":
+      case "Magnitude vs. Freq":
         setupMagFreq();
         plotFunc = plotMagFreq;
+        d3.select('#doLogY').property("disabled", false)
+        break;
+      case "Phase vs. Freq":
+        setupPhaseFreq();
+        plotFunc = plotPhaseFreq;
+        d3.select('#doLogY').property("checked", false)
+        d3.select('#doLogY').property("disabled", true)
         break;
       default:
         console.log("Error: Unknown selection " + d3.select("#selectType").node().value);
@@ -116,7 +125,27 @@
     snpchart.select(".x.axis").select("text").text("Frequency");
     snpchart.select(".y.axis").select("text").text("Magnitude");
   }
+  setupPhaseFreq = function() {
+    snpchart.select(".x.axis").select("text").text("Frequency");
+    snpchart.select(".y.axis").select("text").text("Phase (rad)");
+  }
   updateSnpPlot = function() {
+    // read user settings
+    setupPlotType();
+
+    if (d3.select('#doLogY')[0][0].checked) {
+      y = d3.scale.log()
+        .base(Math.E)
+      yAxis = d3.svg.axis()
+        .orient("left")
+        .tickFormat(function(d) { return "10^" + Math.round(Math.log(d)); });
+    } else {
+      y = d3.scale.linear()
+      yAxis = d3.svg.axis()
+        .orient("left");
+    }
+
+    // plot line
     var line = plotFunc();
 
     // update axes // can this go outside?
@@ -148,12 +177,13 @@
     }
   }
   plotReIm = function() {
-    x = d3.scale.linear()
-      .domain([-1, 1]) // passive limits
+    x.domain([-1, 1]) // passive limits
       .range([0, width]);
-    y = d3.scale.linear()
-      .domain([-1, 1])
+    y.domain([-1, 1])
       .range([height, 0]);
+
+    xAxis.ticks(11, "f");
+    yAxis.ticks(11, "f");
 
     // data join
     var line = d3.svg.line()
@@ -169,12 +199,13 @@
     var xmax = d3.max([S11, S12, S21, S22], function(d) { return d3.max(d, getFreq); });
     var ymin = d3.min([S11, S12, S21, S22], function(d) { return d3.min(d, getMag); });
     var ymax = d3.max([S11, S12, S21, S22], function(d) { return d3.max(d, getMag); });
-    x = d3.scale.linear()
-      .domain([xmin, xmax])
+    x.domain([xmin, xmax])
       .range([0, width]);
-    y = d3.scale.linear()
-      .domain([ymin, ymax])
+    y.domain([ymin, ymax])
       .range([height, 0]);
+
+    xAxis.ticks(6, "s");
+    yAxis.ticks(6, "f");
       
     // data join
     var line = d3.svg.line()
@@ -183,13 +214,33 @@
       .interpolate("linear");
     return(line);
   }
+  plotPhaseFreq = function() {
+    var getFreq = function(d) { return d.Frequency; }
+    var xmin = d3.min([S11, S12, S21, S22], function(d) { return d3.min(d, getFreq); });
+    var xmax = d3.max([S11, S12, S21, S22], function(d) { return d3.max(d, getFreq); });
+    x.domain([xmin, xmax])
+      .range([0, width]);
+    y.domain([-Math.PI/2, Math.PI/2])
+      .range([height, 0]);
+
+    xAxis.ticks(6, "s");
+    yAxis.ticks(6, "f")
+      .tickFormat(function(d) { return Math.round(d / Math.PI * 10) / 10 + "π"; });
+      
+    // data join
+    var line = d3.svg.line()
+      .x(function(d) { return x(d.Frequency); })
+      .y(function(d) { return y(Math.atan(d.Im / d.Re)); })
+      .interpolate("linear");
+    return(line);
+  }
   var plotFunc = plotReIm;
   
-  var selectEl = d3.select("#selectSparams")
+  var selectEl = d3.select("#selectPlotType")
     .append("select")
       .attr("id", "selectType")
-      .on("change", setupPlotType),
-    options = selectEl.selectAll('option').data(["Re vs. Im", "Magnitude (abs) vs. Freq"]); // Data join
+      .on("change", updateSnpPlot),
+    options = selectEl.selectAll('option').data(["Re vs. Im", "Magnitude vs. Freq", "Phase vs. Freq"]); // Data join
   options.enter().append("option").text(function(d) { return d; });
 
   var lab = d3.select("#selectSparams").selectAll("label")
@@ -204,6 +255,20 @@
       .attr("id", function(d) { return "do" + d; })
       .attr("onClick", "updateSnpPlot()");
   lab.append("br");
+
+  var sparams = d3.select("#selectPlotType");
+  sparams.append("hr")
+    .attr("width", "200px")
+    .attr("align", "left");
+  sparams.append("label")
+      .text("log y scale");
+  sparams.append("input")
+      .property("checked", false)
+      .property("disabled", true)
+      .attr("type", "checkbox")
+      .attr("id", "doLogY")
+      .attr("onClick", "updateSnpPlot()");
+  sparams.append("br");
 
   updateSnpPlot();
   setInterval(function() {

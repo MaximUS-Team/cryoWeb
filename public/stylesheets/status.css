@@ -42,12 +42,19 @@ button{
 	margin-left: 20px;
 }
 #Snpchartdiv{
-    float:left;
+    float: left;
 }
 #Tchartdiv{
-    clear:both;
+    clear: both;
+}
+/*#snpLegend{
+    width: 150px;
+    float: left;
 }
 #selectSparams{
-    width:100px;
-    float:left;
+    width: 150px;
+    float: left;
 }
+#selectPlotType{
+    float: left;
+}*/

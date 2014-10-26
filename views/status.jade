@@ -72,19 +72,11 @@ block content
     div
     div(id='Snpchartdiv')
       svg(class='Snpchart')
-    div(id='selectSparams')
-    //
-      input(type='checkbox', name='doS11', id='doS11')
-      | S11
-      br
-      input(type='checkbox', name='doS11', id='doS12')
-      | S12
-      br
-      input(type='checkbox', name='doS11', id='doS21')
-      | S21
-      br
-      input(type='checkbox', name='doS11', id='doS22')
-      | S22
+    div(id='snpLegend', width="200px")
+      div(id='selectPlotType', width="200px")
+      hr(width="200px", align="left")
+      div(id='selectSparams', width="200px")
+      hr(width="200px", align="left")
     div(id='Tchartdiv')
       svg(class='Tchart')
     script(src='http://code.jquery.com/jquery-1.4.2.min.js')
