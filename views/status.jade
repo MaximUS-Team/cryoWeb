@@ -24,25 +24,25 @@ block content
     h2 Settings
     div
     p P:
-    label(for='currentPSet', id='lblCurrentP') --
+    label(for='currentPSet', id='lblCurrentP', class='visiblelabel') --
     form(oninput='pSet.value=rangeInput.value')
       input#rangeInput(type='range', max='100', min='0', name='rangeInput')
       input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='pSet', value='50')
     div
     p I:
-    label(for='currentISet', id='lblCurrentI') --
+    label(for='currentISet', id='lblCurrentI', class='visiblelabel') --
     form(oninput='iSet.value=rangeInput.value')
       input#rangeInput(type='range', max='100', min='0', name='rangeInput')
       input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='iSet', value='50')
     div
     p D: 
-    label(for='currentDSet', id='lblCurrentD') --
+    label(for='currentDSet', id='lblCurrentD', class='visiblelabel') --
     form(oninput='dSet.value=rangeInput.value')
       input#rangeInput(type='range', max='100', min='0', name='rangeInput')
       input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='dSet', value='50')
     div
     p Control Mode:
-    label(for='currentCMode', id='lblCurrentControlMode') --
+    label(for='currentCMode', id='lblCurrentControlMode', class='visiblelabel') --
     select#tempControl
       option(value='autoPID')  Auto PID
       option(value='autoPI')  Auto PI
@@ -50,7 +50,7 @@ block content
       option(value='manualPI')  Manual PI
     div
     p Power:
-    label(for='currentPower', id='lblCurrentPower') --
+    label(for='currentPower', id='lblCurrentPower', class='visiblelabel') --
     select#power
       option(value='50mW')  50mW
       option(value='500mW')  500mW
@@ -66,8 +66,23 @@ block content
       option(value='C')  C
       option(value='D')  D
     div
-    svg(class='Tchart')
-    svg(class='Snpchart')
+    div(id='Snpchartdiv')
+      svg(class='Snpchart')
+    div(id='selectSparams')
+    //
+      input(type='checkbox', name='doS11', id='doS11')
+      | S11
+      br
+      input(type='checkbox', name='doS11', id='doS12')
+      | S12
+      br
+      input(type='checkbox', name='doS11', id='doS21')
+      | S21
+      br
+      input(type='checkbox', name='doS11', id='doS22')
+      | S22
+    div(id='Tchartdiv')
+      svg(class='Tchart')
     script(src='http://code.jquery.com/jquery-1.4.2.min.js')
     script(src='http://d3js.org/d3.v3.min.js')
     script(src='./javascripts/currentTempPlot.js')

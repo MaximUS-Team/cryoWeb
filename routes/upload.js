@@ -145,7 +145,6 @@ function parseSnp(Snp) {
                 "S22 Im": SnpPoint["S22 Im"]
               }, function(err, doc) {
                 if (err) {
-                  res.send(400);
                   return console.log("Error saving to DB");
                 }
               });

@@ -18,7 +18,7 @@ form{
 input{
 	display: inline-block;
 }
-label{
+.visiblelabel{
 	background: #C5E3BF;
 	padding-right: 100px;
 	margin-right: 50px;
@@ -41,4 +41,13 @@ button{
 #submit{
 	margin-left: 20px;
 }
-
+#Snpchartdiv{
+    float:left;
+}
+#Tchartdiv{
+    clear:both;
+}
+#selectSparams{
+    width:100px;
+    float:left;
+}

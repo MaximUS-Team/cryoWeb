@@ -1,7 +1,7 @@
 (function() {
     var data = [];
     var margin = {top: 30, right: 30, bottom: 30, left: 60},
-      width = 500 - margin.left - margin.right,
+      width = 800 - margin.left - margin.right,
       height = 200 - margin.top - margin.bottom;
     var datLength = 20;
 

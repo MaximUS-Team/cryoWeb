@@ -7,7 +7,7 @@ P = 0.1;
 I = 0.005;
 D = 0.005;
 
-snpPeriod = 20; # s
+snpPeriod = 5; # s
 tempPeriod = 1; # s
 throttle = 0;
 
