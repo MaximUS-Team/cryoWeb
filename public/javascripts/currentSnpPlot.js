@@ -98,6 +98,14 @@
       S22.sort(function(a, b) { return b.Frequency - a.Frequency; });
     });
   }
+  setupPlotType = function() {
+    switch(d3.select("#selectType").node().value){
+      case "Re vs. Im":
+        console.log("Re vs. Im");
+        break;
+      default:
+        console.log("Error: Unknown selection " + d3.select("#selectType").node().value);}
+  }
   updateSnpPlot = function() {
     plotReIm();
   }
@@ -135,7 +143,10 @@
     }
   }
   
-  var selectEl = d3.select("#selectSparams").append("select"),//.on("change", change),
+  var selectEl = d3.select("#selectSparams")
+    .append("select")
+      .attr("id", "selectType")
+      .on("change", setupPlotType),
     options = selectEl.selectAll('option').data(["Re vs. Im", "Magnitude (abs) vs. Freq"]); // Data join
   options.enter().append("option").text(function(d) { return d; });
 
