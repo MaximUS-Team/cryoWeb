@@ -134,11 +134,15 @@
       path22.datum(0).attr("d", line);
     }
   }
+  
+  var selectEl = d3.select("#selectSparams").append("select"),//.on("change", change),
+    options = selectEl.selectAll('option').data(["Re vs. Im", "Magnitude (abs) vs. Freq"]); // Data join
+  options.enter().append("option").text(function(d) { return d; });
 
   var lab = d3.select("#selectSparams").selectAll("label")
     .data(["S11", "S12", "S21", "S22"])
     .enter()
-    .append('label')
+    .append("label")
       .text(function(d) { return d; })
       .style("color", function(d, i) { return Scols[i]; });
   lab.append("input")
