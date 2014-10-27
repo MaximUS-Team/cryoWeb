@@ -60,8 +60,9 @@
   var S11 = [], S12 = [], S21 = [], S22 = [],
       x = d3.scale.linear(), y = d3.scale.linear();
 
-  getT = function(data) { return data.T; }
-  getTime = function(data) { return data.time; }
+  function key(data) {
+    return data.Frequency;
+  }
   loadLatestData = function() {
     $.getJSON("./data?type=status&data=Snp", function(res) {
       S11 = [], S12 = [], S21 = [], S22 = [];
@@ -156,22 +157,34 @@
 
     // Apply Data
     if (d3.select('#doS11')[0][0].checked) {
-      path11.datum(S11).attr("d", line);
+      path11.datum(S11)
+        .transition()
+          .duration(1000)
+          .attr("d", line);
     } else {
       path11.datum(0).attr("d", line);
     }
     if (d3.select('#doS21')[0][0].checked) {
-      path21.datum(S21).attr("d", line);
+      path21.datum(S21)
+        .transition()
+          .duration(1000)
+          .attr("d", line);
     } else {
       path21.datum(0).attr("d", line);
     }
     if (d3.select('#doS12')[0][0].checked) {
-      path12.datum(S12).attr("d", line);
+      path12.datum(S12)
+        .transition()
+          .duration(1000)
+          .attr("d", line);
     } else {
       path12.datum(0).attr("d", line);
     }
     if (d3.select('#doS22')[0][0].checked) {
-      path22.datum(S22).attr("d", line);
+      path22.datum(S22)
+        .transition()
+          .duration(1000)
+          .attr("d", line);
     } else {
       path22.datum(0).attr("d", line);
     }
@@ -274,5 +287,5 @@
   setInterval(function() {
     loadLatestData();
     updateSnpPlot();
-  }, 2000);
+  }, 5000);
 })()

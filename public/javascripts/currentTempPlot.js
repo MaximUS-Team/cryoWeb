@@ -1,3 +1,4 @@
+var TupdateTime = 5000;
 (function() {
     var data = [];
     var margin = {top: 30, right: 30, bottom: 30, left: 60},
@@ -12,6 +13,12 @@
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top +
             ")");
+
+    tchart.append("defs").append("clipPath")
+        .attr("id", "clip")
+        .append("rect")
+        .attr("width", width)
+        .attr("height", height);
 
     // create X axis
     var xAxis = d3.svg.axis()
@@ -42,11 +49,14 @@
       .text("Temperature (K)");
 
     // create path generator
-    var path = tchart.append("path")
-      .attr("class", "line");
+    var path = tchart.append("g")
+        .attr("clip-path", "url(#clip)")
+      .append("path")
+        .attr("class", "line");
 
     getT = function(data) { return data.T; }
     getTime = function(data) { return data.time; }
+    var last=0;
     updateCurrentTempPlot = function() {
       $.getJSON("./data?type=status&data=T", function(res) {
         // Update data
@@ -74,8 +84,6 @@
           .domain([1.1 * d3.min(data, getT)
           -0.1 * d3.max(data, getT), d3.max(data, getT)])
           .range([height, 0]);
-        tchart.selectAll(".x.axis")
-          .call(xAxis.scale(x));
         tchart.selectAll(".y.axis")
           .call(yAxis.scale(y));
 
@@ -85,8 +93,18 @@
           .y(function(d) { return y(d.T); })
           .interpolate("linear");
         path.datum(data)
-          .attr("d", line);
-
+            .attr("transform", "translate(0)")
+            .attr("d", line)
+          .transition()
+            .ease("linear")
+            .duration(TupdateTime)
+            .attr("transform", "translate(" + x(last) + ")");
+        tchart.select(".x.axis")
+          .transition()
+            .ease("linear")
+            .duration(TupdateTime)
+            .call(xAxis.scale(x));
+        last = d3.min(data, getTime)
 
         // AXIS
         // join
@@ -98,5 +116,5 @@
     updateCurrentTempPlot();
     setInterval(function() {
         updateCurrentTempPlot();
-    },5000);
+    }, TupdateTime);
 })()
