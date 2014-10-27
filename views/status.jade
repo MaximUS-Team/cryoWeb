@@ -55,10 +55,10 @@ block content
 
   label(class='lblSettingsSubMod') Modify P Value:
 
-  form(oninput='pSet.value=rangeInput.value' style='display:inline-block')
-    input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
+  form(oninput='pSet.value=rangeInputP.value' style='display:inline-block')
+    input#rangeInputP(type='range', max='100', min='0', name='rangeInputP', class='sliderSettings')
     label(class='lblSliderValue') Slider Value:
-    input(class='txtBxSlider', disabled='disabled', for='rangeInput', name='pSet', value='50')
+    input(class='txtBxSlider', disabled='disabled', for='rangeInputP', name='pSet', value='50')
 
   div
 
@@ -70,10 +70,10 @@ block content
 
   label(class='lblSettingsSubMod') Modify I Value:
 
-  form(oninput='iSet.value=rangeInput.value' style='display:inline-block')
-    input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
+  form(oninput='iSet.value=rangeInputI.value' style='display:inline-block')
+    input#rangeInputI(type='range', max='100', min='0', name='rangeInputI', class='sliderSettings')
     label(class='lblSliderValue') Slider Value:
-    input(class='txtBxSlider', disabled='disabled', for='rangeInput', name='iSet', value='50')
+    input(class='txtBxSlider', disabled='disabled', for='rangeInputI', name='iSet', value='50')
 
   div
 
@@ -85,10 +85,10 @@ block content
 
   label(class='lblSettingsSubMod') Modify D Value:
 
-  form(oninput='dSet.value=rangeInput.value' style='display:inline-block')
-    input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
+  form(oninput='dSet.value=rangeInputD.value' style='display:inline-block')
+    input#rangeInputD(type='range', max='100', min='0', name='rangeInputD', class='sliderSettings')
     label(class='lblSliderValue') Slider Value:
-    input(class='txtBxSlider', disabled='disabled', for='rangeInput', name='dSet', value='50')
+    input(class='txtBxSlider', disabled='disabled', for='rangeInputD', name='dSet', value='50')
 
   div
 
@@ -124,7 +124,7 @@ block content
 
   div
 
-  button(class='btnSubmitSettings') Submit Settings
+  button(class='btnSubmitSettings', onclick='updateTestSettings()') Submit Settings
 
   div(class='divDownloads')
 
