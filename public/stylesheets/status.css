@@ -1,3 +1,7 @@
+*{
+	font: 15px helvetica;
+}
+
 .divControl{
 	border-style: solid;
 	border-width: 1px;
@@ -17,7 +21,6 @@
 	margin-bottom: 15px;
 }
 h1{
-	font: 15px helvetica;
 	margin-bottom: 20px;
 	font-weight: bold;
 	font-size: 250%;
@@ -25,11 +28,9 @@ h1{
 	display: block;
 }
 h2{
-	font: 15px helvetica;
 	text-align: center;
 }
 .lblControlHeader{
-	font: 15px helvetica;
 	margin-bottom: 20px;
 	font-weight: bold;
 	font-size: 200%;
@@ -41,68 +42,58 @@ h2{
 	display: block;
 }
 .lblCurrentTP{
-	font: 15px helvetica;
 	font-weight: bold;
 	margin-top: 20px;
 	width: 135px;
 	display: inline-block;
 }
 .lblCurrentTPValue{
-	font: 15px helvetica;
 	width: 40px;
 	display: inline-block;
 	margin-left: 5px;
 	margin-right: 25px;
 }
 .lblRemainingTP{
-	font: 15px helvetica;
 	width: 170px;
 	font-weight: bold;
 	display: inline-block;
 }
 .lblSettingsHeader{
-	font: 15px helvetica;
 	margin-top: 15px;
 	font-weight: bold;
 	font-size: 200%;
 	display: block;
 }
 .lblSettingsSub{
-	font: 15px helvetica;
 	margin-bottom: 10px;
 	width: 175px;
 	font-weight: bold;
 	display: inline-block;
 }
 .lblSettingsActualValue{
-	font: 15px helvetica;
 	width: 30px;
 	display:inline-block;
 	text-align: center;
 }
 .lblSettingsSubMod{
-	font: 15px helvetica;
 	font-weight: bold;
 	width: 175px;
 	display:inline-block;
 	text-align: right;
 }
 .lblSliderValue{
-	font: 15px helvetica;
 	margin-left: 10px;
 	margin-right: 10px;
 	width: 100px;
 	font-weight: bold;
 }
 .lblDownloadsHeader{
-	font: 15px helvetica;
 	margin-bottom: 5px;
 	font-weight: bold;
 	font-size: 200%;
 	display: block;
 }
 .lblDownloadsInfoSNP{
-	font: 15px helvetica;
 	width: 400px;
 	margin-right: 10px;
 	margin-bottom: 25px;
@@ -110,32 +101,27 @@ h2{
 	vertical-align: middle;
 }
 .lblDownloadsInfoGraphs{
-	font: 15px helvetica;
 	width: 310px;
 	margin-right: 10px;
 	display: inline-block;
 	vertical-align: middle;
 }
 .drpdwnRemainingTP{
-	font: 15px helvetica;
 	width: 75px;
 	display: inline-block;
 }
 .drpdwnSettings{
-	font: 15px helvetica;
 	display: inline-block;
 	margin-left: 10px;
 	width: 100px;
 }
 .btnTestControl{ 
-	font: 15px helvetica;
 	margin-right: 10px;
 	width: 125px;
 	height: 50px;
 	font-weight: bold;
 }
 .btnSubmitSettings{
-	font: 15px helvetica;
 	margin-top: 10px;
 	margin-left: 455px;
 	width: 125px;
@@ -143,7 +129,6 @@ h2{
 	display: inline-block;
 }
 .btnDownloadSNP{
-	font: 15px helvetica;
 	width: 160px;
 	height: 50px;
 	display: inline-block;
@@ -151,7 +136,6 @@ h2{
 	margin-right: 20px;
 }
 .btnDownloadGraph{
-	font: 15px helvetica;
 	width: 150px;
 	height: 50px;
 	font-weight: bold;
