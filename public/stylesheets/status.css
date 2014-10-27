@@ -43,6 +43,7 @@ h2{
 .lblCurrentTP{
 	font: 15px helvetica;
 	font-weight: bold;
+	margin-top: 20px;
 	width: 135px;
 	display: inline-block;
 }
@@ -122,7 +123,7 @@ h2{
 }
 .drpdwnSettings{
 	font: 15px helvetica;
-	display:inline-block;
+	display: inline-block;
 	margin-left: 10px;
 	width: 100px;
 }
@@ -130,12 +131,16 @@ h2{
 	font: 15px helvetica;
 	margin-right: 10px;
 	width: 125px;
-	height:50px;
+	height: 50px;
 	font-weight: bold;
 }
 .btnSubmitSettings{
 	font: 15px helvetica;
+	margin-top: 10px;
 	margin-left: 455px;
+	width: 125px;
+	height: 30px;
+	display: inline-block;
 }
 .btnDownloadSNP{
 	font: 15px helvetica;
