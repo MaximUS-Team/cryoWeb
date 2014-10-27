@@ -36,11 +36,19 @@
       // set the new test points
       var tstpts = document.getElementById("remainingTestPoints");
       tstpts.options.length = 0;
-      for (var point in res.testpoints) {
+      if (res.testpoints.length === 0) {
         var option = document.createElement("option");
-        option.innerHTML = res.testpoints[point];
+        option.innerHTML = "none";
         tstpts.add(option);
+      } else {
+        for (var point in res.testpoints) {
+          var option = document.createElement("option");
+          option.innerHTML = res.testpoints[point];
+          tstpts.add(option);
+        }
       }
+      // update the label with the latest test point
+      document.getElementById("currentTP").innerHTML = tstpts.options[0].innerHTML;
     });
   }
 
