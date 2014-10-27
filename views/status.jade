@@ -3,8 +3,10 @@ html(lang='en')
 block content
   head
     h1= title
+  hr
   :markdown
     Welcome to #{title} [View Logs](/logs)
+
   div
     link(rel='stylesheet', href='/stylesheets/status.css')
     script(src='./javascripts/pauseCurrentTest.js')
@@ -13,74 +15,163 @@ block content
     script(src='./javascripts/submitTestSettings.js')
     script(src='./javascripts/downloadData.js')
 
-    div
-    br
-    button(class='btn', id='btnPause', style='width: 125px; height:50px; background-color:orange', onclick='pauseCurrentTest()') Pause Test
+  div(class='divControl')
 
-    button(class='btn', id='btnSkip', style='width: 125px; height:50px; background-color:yellow', onclick='skipTestPoint()') Skip Test Point
+  label(class='lblControlHeader')
+   |Test Control
+   hr
 
-    button(class='btn', id='btnStop', style='width: 125px; height:50px; background-color:red', onclick='stopTest()') Stop Test
-    
-    button(class='btn', id='btnDownloadSNP', style='width: 150px; height:50px; background-color:green', onclick='downloadSNPData()') Download SNP Data
+  button(class='btnTestControl', id='btnPause', onclick='pauseCurrentTest()') Pause Test
 
-    button(class='btn', id='btnDownloadSVG', style='width: 150px; height:50px; background-color:blue', onclick='activateSVGCrowbar()') Download Graph
-    
-    h2 Settings
-    div
-    p P:
-    label(for='currentPSet', id='lblCurrentP', class='visiblelabel') --
-    form(oninput='pSet.value=rangeInput.value')
-      input#rangeInput(type='range', max='100', min='0', name='rangeInput')
-      input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='pSet', value='50')
-    div
-    p I:
-    label(for='currentISet', id='lblCurrentI', class='visiblelabel') --
-    form(oninput='iSet.value=rangeInput.value')
-      input#rangeInput(type='range', max='100', min='0', name='rangeInput')
-      input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='iSet', value='50')
-    div
-    p D: 
-    label(for='currentDSet', id='lblCurrentD', class='visiblelabel') --
-    form(oninput='dSet.value=rangeInput.value')
-      input#rangeInput(type='range', max='100', min='0', name='rangeInput')
-      input(style='background:#C5E3BF', disabled='disabled', for='rangeInput', name='dSet', value='50')
-    div
-    p Control Mode:
-    label(for='currentCMode', id='lblCurrentControlMode', class='visiblelabel') --
-    select#tempControl
-      option(value='autoPID')  Auto PID
-      option(value='autoPI')  Auto PI
-      option(value='manualPID')  Manual PID
-      option(value='manualPI')  Manual PI
-    div
-    p Power:
-    label(for='currentPower', id='lblCurrentPower', class='visiblelabel') --
-    select#power
-      option(value='50mW')  50mW
-      option(value='500mW')  500mW
-      option(value='5W')  5W
-      option(value='50W')  50W
-    div
-      input(type='submit', value='Submit Settings', onclick='updateTestSettings()')
-    div
-    p Remaining Test Points:
-    select#remainingTestPoints
-      option(value='A')  A
-      option(value='B')  B
-      option(value='C')  C
-      option(value='D')  D
-    div
-    div(id='Snpchartdiv')
-      svg(class='Snpchart')
-    div(id='snpLegend', width="200px")
-      div(id='selectPlotType', width="200px")
-      hr(width="200px", align="left")
-      div(id='selectSparams', width="200px")
-      hr(width="200px", align="left")
-    div(id='Tchartdiv')
-      svg(class='Tchart')
-    script(src='http://code.jquery.com/jquery-1.4.2.min.js')
-    script(src='http://d3js.org/d3.v3.min.js')
-    script(src='./javascripts/currentTempPlot.js')
-    script(src='./javascripts/currentSnpPlot.js')
-    script(src='./javascripts/updateTestSettings.js')
+  button(class='btnTestControl', id='btnSkip', onclick='skipTestPoint()') Skip Test Point
+
+  button(class='btnTestControl', id='btnStop', onclick='stopTest()') Stop Test
+
+  div
+
+  label(class='lblRemainingTestPointsHR')
+   hr
+
+  label(class='lblCurrentTP') Current Test Point:
+
+  label(class='lblCurrentTPValue', name='currentTP') --
+
+  label(class='lblRemainingTP') Remaining Test Points:
+
+  select(class='drpdwnRemainingTP')#remainingTestPoints
+    option(value='A')  a
+    option(value='B')  b
+    option(value='C')  c
+    option(value='D')  d
+
+  div(class='divSettings')
+
+  label(class='lblSettingsHeader')
+   |Test Settings
+   hr
+
+  label(class='lblSettingsSub') Current P:
+
+  label(for='currentPSet', id='lblCurrentP', class='lblSettingsActualValue') --
+
+  label(class='vertDiv') |
+
+  label(class='lblSettingsSubMod') Modify P Value:
+
+  form(oninput='pSet.value=rangeInput.value' style='display:inline-block')
+    input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
+    label(class='lblSliderValue') Slider Value:
+    input(style='background:#C5E3BF; width: 25px', disabled='disabled', for='rangeInput', name='pSet', value='50')
+
+  div
+
+  label(class='lblSettingsSub') Current I:
+
+  label(for='currentISet', id='lblCurrentI', class='lblSettingsActualValue') --
+
+  label(class='vertDiv') |
+
+  label(class='lblSettingsSubMod') Modify I Value:
+
+  form(oninput='iSet.value=rangeInput.value' style='display:inline-block')
+    input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
+    label(class='lblSliderValue') Slider Value:
+    input(style='background:#C5E3BF; width: 25px', disabled='disabled', for='rangeInput', name='iSet', value='50')
+
+  div
+
+  label(class='lblSettingsSub') Current D:
+
+  label(for='currentDSet', id='lblCurrentD', class='lblSettingsActualValue') --
+
+  label(class='vertDiv') |
+
+  label(class='lblSettingsSubMod') Modify D Value:
+
+  form(oninput='dSet.value=rangeInput.value' style='display:inline-block')
+    input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
+    label(class='lblSliderValue') Slider Value:
+    input(style='background:#C5E3BF; width: 25px;', disabled='disabled', for='rangeInput', name='dSet', value='50')
+
+  div
+
+  label(class='lblSettingsSub') Current Control Mode:
+
+  label(for='currentCMode', id='lblCurrentControlMode', class='lblSettingsActualValue') --
+
+  label(class='vertDiv') |
+
+  label(class='lblSettingsSubMod') Modify Control Mode:
+
+  select#tempControl(class='drpdwnSettings')
+    option(value='autoPID')  Auto PID
+    option(value='autoPI')  Auto PI
+    option(value='manualPID')  Manual PID
+    option(value='manualPI')  Manual PI
+
+  div
+
+  label(class='lblSettingsSub') Current Power Mode:
+
+  label(for='currentPower', id='lblCurrentPower', class='lblSettingsActualValue') --
+
+  label(class='vertDiv') |
+
+  label(class='lblSettingsSubMod') Modify Power Mode:
+
+  select#power(class='drpdwnSettings')
+    option(value='50mW') 50mW
+    option(value='500mW') 500mW
+    option(value='5W') 5W
+    option(value='50W') 50W
+
+  label(style='display: block')
+   | 
+   hr
+
+  button(class='btnSubmitSettings') Submit Settings
+
+  div(class='divDownloads')
+
+  label(class='lblDownloadsHeader')
+   |Graphs
+   hr
+  
+  div(id='Snpchartdiv')
+    svg(class='Snpchart')
+  div(id='snpLegend', width="200px")
+    div(id='selectPlotType', width="200px")
+    hr(width="200px", align="left")
+    div(id='selectSparams', width="200px")
+    hr(width="200px", align="left")
+  div(id='Tchartdiv')
+    svg(class='Tchart')
+  script(src='http://code.jquery.com/jquery-1.4.2.min.js')
+  script(src='http://d3js.org/d3.v3.min.js')
+  script(src='./javascripts/currentTempPlot.js')
+  script(src='./javascripts/currentSnpPlot.js')
+  script(src='./javascripts/updateTestSettings.js')
+
+  div(class='divDownloads')
+
+  label(class='lblDownloadsHeader')
+   |Download Options
+   hr
+
+  label(class='lblDownloadsInfoSNP')
+   |Download the current SNP data. This includes frequency, S11 re/im, S12 re/im, S21 re/im, S22 re/im in a .CSV format.
+   br
+   hr
+   strong NOTE: 
+   | Not supported in IE9 or lower browser.
+
+  button(class='btnDownloadSNP', onclick='downloadSNPData()') Download SNP Data
+
+  label(class='lblDownloadsInfoGraphs')
+   |Download a graph on the page as an .SVG file.
+   br
+   hr
+   strong NOTE: 
+   | Not supported in IE9 or lower browser.
+
+  button(class='btnDownloadGraph', onclick='activateSVGCrowbar()') Download Graph
