@@ -156,6 +156,11 @@ h2{
 	height: 50px;
 	font-weight: bold;
 }
+.txtBxSlider{
+	background: #C5E3BF;
+	width: 25px;
+	text-align: center;
+}
 .vertDiv{
 	width: 50px;
 	margin-left: 25px;

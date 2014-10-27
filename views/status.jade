@@ -58,7 +58,7 @@ block content
   form(oninput='pSet.value=rangeInput.value' style='display:inline-block')
     input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
     label(class='lblSliderValue') Slider Value:
-    input(style='background:#C5E3BF; width: 25px', disabled='disabled', for='rangeInput', name='pSet', value='50')
+    input(class='txtBxSlider', disabled='disabled', for='rangeInput', name='pSet', value='50')
 
   div
 
@@ -73,7 +73,7 @@ block content
   form(oninput='iSet.value=rangeInput.value' style='display:inline-block')
     input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
     label(class='lblSliderValue') Slider Value:
-    input(style='background:#C5E3BF; width: 25px', disabled='disabled', for='rangeInput', name='iSet', value='50')
+    input(class='txtBxSlider', disabled='disabled', for='rangeInput', name='iSet', value='50')
 
   div
 
@@ -88,7 +88,7 @@ block content
   form(oninput='dSet.value=rangeInput.value' style='display:inline-block')
     input#rangeInput(type='range', max='100', min='0', name='rangeInput', class='sliderSettings')
     label(class='lblSliderValue') Slider Value:
-    input(style='background:#C5E3BF; width: 25px;', disabled='disabled', for='rangeInput', name='dSet', value='50')
+    input(class='txtBxSlider', disabled='disabled', for='rangeInput', name='dSet', value='50')
 
   div
 
@@ -123,7 +123,7 @@ block content
     option(value='50W') 50W
 
   div
-  
+
   button(class='btnSubmitSettings') Submit Settings
 
   div(class='divDownloads')
