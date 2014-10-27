@@ -1,35 +1,71 @@
 extends layout
 
 block content
-  h1= title
+  link(rel='stylesheet', href='/stylesheets/logs.css')
+
+  head
+    h1= title
+  hr
   :markdown
-    Welcome to #{title}  go to [Status](/status)?
+    Welcome to #{title}. View [Test Status](/status)
+
+  div(class='divStyle')
+
+  label(class='baseHeader')
+   |Log Information
+   hr
+
+  label(class='logInfo')
+   strong Update Log 
+   | shows the latest 100 entries stored in the database.
+   br
+   br
+   strong Info
+   | , 
+   strong Warning
+   | , 
+   strong Error
+   | , 
+   strong Critical 
+   | will show up to 100 of the latest entries of log that match that type.
+
+  div(class='divStyle')
+
+  button(class='btnLog', onclick='logTest()') Update Log
+
+  button(class='btnLog', onclick='infoLog()') Info
+
+  button(class='btnLog', onclick='warningLog()') Warning
+
+  button(class='btnLog', onclick='errorLog()') Error
+
+  button(class='btnLog', onclick='criticalLog()') Critical
+
+  hr
+
+  label(class='logInfo')
+   strong Log:
+
+  ul#lstLog
+    li This log is empty.
+
+  div(class='divStyle')
+
+  label(class='baseHeader')
+   |Clear Logs
+   hr
+
+  label(class='logInfo')
+   strong Warning: 
+   | pressing the below button will 
+   strong permanently delete  
+   | all logs in the database.
+   br
+   br
+
   div
 
-      button(class='btn', style='width: 100px; height:50px; background-color:green', onclick='logTest()') Update Log
-
-      button(class='btn', style='width: 100px; height:50px; background-color:blue', onclick='infoLog()') Info
-
-      button(class='btn', style='width: 100px; height:50px; background-color:yellow', onclick='warningLog()') Warning
-
-      button(class='btn', style='width: 100px; height:50px; background-color:orange', onclick='errorLog()') Error
-
-      button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='criticalLog()') Critical
-
-      p Press update log to retrieve last 100 logs:
-      p Press Info, Error, Warning or Critical to retrieve the last entries of that log level:
-      ul#lstLog
-
-
-
-
-
-
-  div
-
-  div 
-  button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='deleteLogs()') Clear Logs
-  div
+  button(class='btnLog', onclick='deleteLogs()') Clear Logs
 
   script(src='./javascripts/logTest.js')
   script(src='./javascripts/infoLog.js')

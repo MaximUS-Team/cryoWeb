@@ -122,16 +122,20 @@ router.post('/', function(req, res) {
       });
     })()
   }
-
+  
   if (query.serverCommand) {
     if (query.serverCommand === "LOG_CLEAR"){
-      (function() {
-        var logsModel = mongoose.model('logs');
-        //logsModel.drop();
-        db.logs.remove();
-        console.log(db.logs.remove());
-        console.log("test");
-      })();
+      var logsModel = mongoose.model('logs');
+      //logsModel.drop();
+      logsModel.remove({}, function(err) {
+        if (err) {
+          res.send(400);
+          logger.logThis('err', "Error deleting logs from DB");
+        }
+      });
+      //db.logs.remove();
+      //console.log(db.logs.remove());
+      console.log("test");
     } else {
       // update database with new server command
       (function() {
