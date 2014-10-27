@@ -16,11 +16,19 @@ block content
 
       button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='criticalLog()') Critical
 
-      p Press update log to retrieve last 10 entries:
-      p Press Info, Error, Warning or Critical to retrieve the last 10 entries of that error level:
+      p Press update log to retrieve last 100 logs:
+      p Press Info, Error, Warning or Critical to retrieve the last entries of that log level:
       ul#lstLog
 
 
+
+
+
+
+  div
+
+  div 
+  button(class='btn', style='width: 100px; height:50px; background-color:red', onclick='deleteLogs()') Clear Logs
   div
 
   script(src='./javascripts/logTest.js')
@@ -28,4 +36,5 @@ block content
   script(src='./javascripts/criticalLog.js')
   script(src='./javascripts/errorLog.js')
   script(src='./javascripts/warningLog.js')
+  script(src='./javascripts/deleteLogs.js')
   script(src='http://code.jquery.com/jquery-1.4.2.min.js')

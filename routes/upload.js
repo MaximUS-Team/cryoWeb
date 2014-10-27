@@ -24,8 +24,8 @@ router.post('/', function(req, res) {
   query = req.query ? req.body : req.query;
 
   //app.Log('info', 'Info Test');
-  console.log("test logging");
-  logger.logThis('info', "Info Test");
+  //console.log("test logging");
+  //logger.logThis('info', "Info Test");
 
   // ensure the query has something
   if (!query.time && !query.T && !query.Snp && !query.serverCommand && !query.updateSettings) {
@@ -42,7 +42,8 @@ router.post('/', function(req, res) {
     current.save(function(err) {
       if (err) {
         res.send(400);
-        return console.log("Error saving to DB");
+        logger.logThis('err', 'Error saving to DB')
+        //return console.log("Error saving to DB");
       } else {
         res.send(201);
       }
@@ -123,24 +124,34 @@ router.post('/', function(req, res) {
   }
 
   if (query.serverCommand) {
-    // update database with new server command
-    (function() {
-      var serverCmdSchema = mongoose.model('serverCommand');
-      // send a new command to the server
-      var date = new Date();
-      var enclosedMeta = query.meta ? query.meta : "";
-      serverCmdSchema.create({
-        time: date.toUTCString(),
-        command: query.serverCommand,
-        meta: enclosedMeta
-      }, function(err, doc) {
-        if (err) {
-          res.send(400);
-          //return console.log("Error saving to DB");
-          logger.logThis("err", "Error saving to DB")
-        }
-      });
-    })();
+    if (query.serverCommand === "LOG_CLEAR"){
+      (function() {
+        var logsModel = mongoose.model('logs');
+        //logsModel.drop();
+        db.logs.remove();
+        console.log(db.logs.remove());
+        console.log("test");
+      })();
+    } else {
+      // update database with new server command
+      (function() {
+        var serverCmdSchema = mongoose.model('serverCommand');
+        // send a new command to the server
+        var date = new Date();
+        var enclosedMeta = query.meta ? query.meta : "";
+        serverCmdSchema.create({
+          time: date.toUTCString(),
+          command: query.serverCommand,
+          meta: enclosedMeta
+        }, function(err, doc) {
+          if (err) {
+            res.send(400);
+            //return console.log("Error saving to DB");
+            logger.logThis("err", "Error saving to DB")
+          }
+        });
+      })();
+    }
     //console.log("Query received: " + query.serverCommand);
     res.send(201);
   }
