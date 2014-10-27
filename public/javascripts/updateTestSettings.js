@@ -19,10 +19,9 @@
         document.getElementById("btnStop").disabled = true;
       }
       // update the test skip button & test skip points
-      if (res.testpoints && res.testpoints.length > 0) {
-        if (status == "RUNNING" || status == "PAUSED") {
+      if (res.testpoints && res.testpoints.length > 0 &&
+        (status === "RUNNING" || status === "PAUSED")) {
           document.getElementById("btnSkip").disabled = false;
-        }
       } else {
         document.getElementById("btnSkip").disabled = true;
       }
