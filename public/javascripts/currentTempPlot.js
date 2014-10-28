@@ -1,4 +1,5 @@
 var TupdateTime = 5000;
+var TanimateTime = 1000;
 (function() {
     var data = [];
     var margin = {top: 30, right: 30, bottom: 30, left: 60},
@@ -97,12 +98,12 @@ var TupdateTime = 5000;
             .attr("d", line)
           .transition()
             .ease("linear")
-            .duration(TupdateTime)
+            .duration(TanimateTime)
             .attr("transform", "translate(" + x(last) + ")");
         tchart.select(".x.axis")
           .transition()
             .ease("linear")
-            .duration(TupdateTime)
+            .duration(TanimateTime)
             .call(xAxis.scale(x));
         last = d3.min(data, getTime)
 

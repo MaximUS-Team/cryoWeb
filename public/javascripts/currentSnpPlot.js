@@ -1,3 +1,4 @@
+var SnpupdateTime = 10000;
 (function () {
   var S11col = "steelblue";
   var S12col = "green";
@@ -287,5 +288,5 @@
   setInterval(function() {
     loadLatestData();
     updateSnpPlot();
-  }, 5000);
+  }, SnpupdateTime);
 })()
