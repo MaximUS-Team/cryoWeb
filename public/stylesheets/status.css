@@ -1,5 +1,6 @@
 *{
-	font: 15px helvetica;
+	font-family: helvetica;
+	font-size: 15px;
 }
 
 .divControl{
@@ -41,9 +42,39 @@ h2{
 	margin-bottom: 20px;
 	display: block;
 }
-.lblCurrentTP{
+.lblCurrentTestStatus{
 	font-weight: bold;
 	margin-top: 20px;
+	width: 150px;
+	display: inline-block;
+}
+.lblCurrentTSValueStopped{
+	color: #8B0000;
+	font-weight: bold;
+	width: 150px;
+	display: inline-block;
+}
+.lblCurrentTSValuePaused{
+	color: #DAA520;
+	font-weight: bold;
+	width: 150px;
+	display: inline-block;
+}
+.lblCurrentTSValueRunning{
+	color: #228B22;
+	font-weight: bold;
+	width: 150px;
+	display: inline-block;
+}
+.lblCurrentTSValueUnknown{
+	color: #708090;
+	font-weight: bold;
+	width: 150px;
+	display: inline-block;
+}
+.lblCurrentTP{
+	font-weight: bold;
+	margin-top: 10px;
 	width: 135px;
 	display: inline-block;
 }

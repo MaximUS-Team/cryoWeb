@@ -8,15 +8,21 @@
         document.getElementById("btnPause").disabled = false;
         document.getElementById("btnPause").innerHTML = "Pause Test";
         document.getElementById("btnStop").disabled = false;
+        document.getElementById("currentTestStatus").innerHTML = "RUNNING";
+        document.getElementById("currentTestStatus").className = "lblCurrentTSValueRunning"
       } else if (status == "PAUSED") {
         // test is paused, allow resuming and stopping
         document.getElementById("btnPause").disabled = false;
         document.getElementById("btnPause").innerHTML = "Resume Test";
         document.getElementById("btnStop").disabled = false;
+        document.getElementById("currentTestStatus").innerHTML = "PAUSED";
+        document.getElementById("currentTestStatus").className = "lblCurrentTSValuePaused"
       } else {
         // test is stopped, do not allow anything
         document.getElementById("btnPause").disabled = true;
         document.getElementById("btnStop").disabled = true;
+        document.getElementById("currentTestStatus").innerHTML = "STOPPED";
+        document.getElementById("currentTestStatus").className = "lblCurrentTSValueStopped"
       }
       // update the test skip button & test skip points
       if (res.testpoints && res.testpoints.length > 0 &&
