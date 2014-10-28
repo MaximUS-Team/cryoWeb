@@ -1,0 +1,29 @@
+*{
+	font-family: helvetica;
+	font-size: 15px;
+}
+h1{
+	font-weight: bold;
+	font-size: 250%;
+	text-align: center;
+}
+.divStyle{
+	border-style: solid;
+	border-width: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.baseHeader{
+	font-weight: bold;
+	font-size: 200%;
+	display: block;
+}
+.logInfo{
+	text-align: justify;
+	display: inline-block;
+}
+.btnLog{
+	width: 100px;
+	height: 50px;
+	margin-right: 10px;
+}
